@@ -57,6 +57,20 @@
     .site-title a { color: var(--text); }
     .site-subtitle { font-size: 15px; color: var(--muted); margin: 0 0 2px; }
     .site-subtitle-prev { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+    .top-social ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      padding: 0;
+      margin: 0 0 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .top-social a {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .top-social a:hover { color: var(--accent-hover); }
     .desktop-menu ul {
       list-style: none;
       display: flex;
@@ -94,9 +108,11 @@
       color: var(--text);
     }
     .home-section h4 {
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 600;
-      margin: 20px 0 10px;
+      margin: 32px 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
       color: var(--text);
     }
     .home-section ul { list-style: none; padding: 0; margin: 0; }
@@ -118,17 +134,6 @@
       border-top: 1px solid var(--border);
       text-align: center;
     }
-    .footer-social ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 12px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .footer-social a { color: var(--muted); font-size: 14px; }
-    .footer-social a:hover { color: var(--accent-hover); }
     .site-description { color: var(--muted); font-size: 14px; margin: 0; }
     @media (max-width: 500px) {
       .desktop-menu ul { gap: 14px; }
@@ -145,6 +150,17 @@
       <h1 class="site-title"><a href="/">Riashat Islam</a></h1>
       <p class="site-subtitle">Member of Technical Staff, Microsoft AI (MAI)</p>
       <p class="site-subtitle-prev">Previously: Microsoft Research AI Frontiers · DreamFold AI · Mila Quebec AI Institute, McGill University</p>
+
+      <div class="top-social">
+        <ul>
+          <li><a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/riashatislam/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/Riashat/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://twitter.com/riashatislam" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://dblp.org/search?q=Islam%2C%20Riashat/" target="_blank" rel="noopener noreferrer">DBLP</a></li>
+        </ul>
+      </div>
+
       <nav class="desktop-menu" aria-label="Main navigation">
         <ul>
           <li><a href="#main" aria-current="page">About</a></li>
@@ -185,19 +201,19 @@
             <span class="entry-collab">Collaborators: Ali Farhadi, John Langford, Ranjay Krishna</span>
           </li>
           <li>
-            <span class="entry-role">Senior Research Scientist — RL Post-Training | Pre-Training | Big Climb | World Models</span>
+            <span class="entry-role">Senior Research Scientist — RL Post-Training | Pre-Training | World Models</span>
             <span class="entry-meta">Microsoft Research AI Frontiers, New York — Jan 2025 – Present</span>
             <span class="entry-collab">Collaborators: John Langford, Alex Lamb, Kwangjun Ahn, Tim Pearce, Manan Tomar</span>
           </li>
           <li>
             <span class="entry-role">Senior Research Scientist — Post-Training and Safety Alignment</span>
-            <span class="entry-meta">HUMAIN, Riyadh — Jul 2024 – Jan 2025</span>
-            <span class="entry-collab">Collaborators: M Saiful Bari, Ehsan Hoque</span>
+            <span class="entry-meta">SDAIA, HUMAIN, Riyadh — Jul 2024 – Jan 2025</span>
+            <span class="entry-collab">Collaborators: M Saiful Bari, Sheikh Jubair, Ehsan Hoque, Pedro Moreno</span>
           </li>
           <li>
-            <span class="entry-role">Research Scientist (Founding Member) — RL &amp; Flow Matching for Protein Structure Design</span>
+            <span class="entry-role">Research Scientist — RL &amp; Flow Matching for Protein Structure Design</span>
             <span class="entry-meta">DreamFold AI, Montreal — Jun 2023 – Jul 2024</span>
-            <span class="entry-collab">Collaborators: Alex Tong, Joey Bose</span>
+            <span class="entry-collab">Collaborators: Alex Tong, Joey Bose, Jarrid Rector-Brooks</span>
           </li>
           <li>
             <span class="entry-role">Student Researcher — Factorized Latent Representations in RL</span>
@@ -293,15 +309,6 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-social">
-        <ul>
-          <li><a href="https://twitter.com/riashatislam" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="https://github.com/Riashat/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/riashatislam/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-          <li><a href="https://dblp.org/search?q=Islam%2C%20Riashat/" target="_blank" rel="noopener noreferrer">DBLP</a></li>
-        </ul>
-      </div>
       <p class="site-description"><a class="email-link" href="mailto:riashat.islam.93@gmail.com">riashat.islam.93 (at) gmail (dot) com</a></p>
     </footer>
   </div>
