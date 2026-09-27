@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Riashat Islam</title>
-  <meta name="description" content="Senior Research Scientist at Microsoft Research. Reinforcement learning, representation learning, and world models.">
+  <meta name="description" content="Member of Technical Staff, Microsoft AI (MAI). Reinforcement learning, world models, and post-training for reasoning LLMs and VLMs.">
   <link rel="canonical" href="https://riashat.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Riashat Islam">
-  <meta property="og:description" content="Senior Research Scientist at Microsoft Research. Reinforcement learning, representation learning, and world models.">
+  <meta property="og:description" content="Member of Technical Staff, Microsoft AI (MAI). Reinforcement learning, world models, and post-training for reasoning LLMs and VLMs.">
   <meta property="og:url" content="https://riashat.github.io/">
   <meta property="og:image" content="https://riashat.github.io/images/Riashat_Image.jpg">
   <style>
@@ -19,7 +19,7 @@
       --accent-hover: #e37222;
       --border: #ddd3c4;
       --paper: #f2e8d9;
-      --max-width: 760px;
+      --max-width: 780px;
     }
     * { box-sizing: border-box; }
     body {
@@ -31,17 +31,9 @@
       font-size: 16px;
       line-height: 1.6;
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover, a:focus {
-      color: var(--accent-hover);
-    }
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover, a:focus { color: var(--accent-hover); }
+    .skip-link { position: absolute; left: -9999px; }
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -61,20 +53,18 @@
       object-fit: cover;
       margin-bottom: 16px;
     }
-    .site-title {
-      font-size: 28px;
-      font-weight: 600;
-      margin: 0 0 12px;
-    }
-    .site-title a {
-      color: var(--text);
-    }
+    .site-title { font-size: 28px; font-weight: 600; margin: 0 0 4px; }
+    .site-title a { color: var(--text); }
+    .site-subtitle { font-size: 15px; color: var(--muted); margin: 0 0 2px; }
+    .site-subtitle-prev { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
     .desktop-menu ul {
       list-style: none;
       display: flex;
       gap: 24px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .desktop-menu a {
       font-size: 14px;
@@ -87,9 +77,9 @@
       border-bottom: 2px solid var(--accent);
       padding-bottom: 4px;
     }
-    .biography p {
-      margin: 0 0 16px;
-    }
+    .biography p { margin: 0 0 16px; }
+    .research-interests { font-size: 15px; color: var(--muted); margin: 0 0 16px; }
+    .research-interests strong { color: var(--text); }
     .home-section {
       margin-top: 48px;
       padding-top: 24px;
@@ -103,22 +93,25 @@
       letter-spacing: 0.03em;
       color: var(--text);
     }
-    .home-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .home-section h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 20px 0 10px;
+      color: var(--text);
     }
-    .home-section li {
-      margin-bottom: 10px;
-      padding-left: 16px;
-      position: relative;
-    }
-    .home-section li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
+    .home-section ul { list-style: none; padding: 0; margin: 0; }
+    .home-section li { margin-bottom: 14px; padding-left: 16px; position: relative; }
+    .home-section li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
+    .entry-meta { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .entry-role { font-weight: 600; }
+    .entry-collab {
+      display: block;
+      font-size: 13px;
       color: var(--muted);
+      font-style: italic;
+      margin-top: 2px;
     }
+    .pub-note { font-size: 14px; color: var(--muted); margin-top: 12px; }
     .site-footer {
       margin-top: 64px;
       padding-top: 24px;
@@ -134,18 +127,9 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-    .footer-social a {
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .footer-social a:hover {
-      color: var(--accent-hover);
-    }
-    .site-description {
-      color: var(--muted);
-      font-size: 14px;
-      margin: 0;
-    }
+    .footer-social a { color: var(--muted); font-size: 14px; }
+    .footer-social a:hover { color: var(--accent-hover); }
+    .site-description { color: var(--muted); font-size: 14px; margin: 0; }
     @media (max-width: 500px) {
       .desktop-menu ul { gap: 14px; }
     }
@@ -159,11 +143,14 @@
         <img src="./images/Riashat_Image.jpg" alt="Riashat Islam" width="140" height="140">
       </div>
       <h1 class="site-title"><a href="/">Riashat Islam</a></h1>
+      <p class="site-subtitle">Member of Technical Staff, Microsoft AI (MAI)</p>
+      <p class="site-subtitle-prev">Previously: Microsoft Research AI Frontiers · DreamFold AI · Mila Quebec AI Institute, McGill University</p>
       <nav class="desktop-menu" aria-label="Main navigation">
         <ul>
           <li><a href="#main" aria-current="page">About</a></li>
-          <li><a href="#publications">Publications</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Publications</a></li>
         </ul>
       </nav>
     </header>
@@ -171,77 +158,136 @@
     <main id="main" tabindex="-1">
       <div class="biography">
         <p>
-          I am a Senior Research Scientist at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>.
-          Previously, I was a PhD student supervised by <a href="https://mila.quebec/en/person/doina-precup/">Doina Precup</a>
-          in the Reasoning and Learning Lab at McGill University, part of <a href="http://mila.umontreal.ca">Mila – Quebec AI Institute</a>,
-          while also working as a Student Researcher at Microsoft Research NYC and Montreal with
-          <a href="https://www.hunch.net/~jl/">John Langford</a>, <a href="https://scholar.google.com/citations?user=BFzFy1YAAAAJ&hl=en">Alex Lamb</a>,
-          <a href="https://dipendramisra.com/">Dipendra Misra</a>, <a href="https://www.microsoft.com/en-us/research/people/retachet/">Remi Tachet Des Combes</a>,
-          <a href="https://www.microsoft.com/en-us/research/people/rolaroch/">Romain Laroche</a>, and
-          <a href="https://www.microsoft.com/en-us/research/people/havansei/">Harm Van Seijen</a>. I also collaborate closely with
-          <a href="https://anirudh9119.github.io/">Anirudh Goyal</a> and <a href="https://yoshuabengio.org/">Yoshua Bengio</a>.
-          For past and present collaborators, see the <a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en">full list here</a>.
+          I am a Member of Technical Staff at <strong>Microsoft AI (MAI)</strong>, working on the final climb
+          post-training of the MAI-Thinking Vision Language Model. Previously, I was a Senior Research Scientist
+          at Microsoft Research AI Frontiers, where I was a core member of the Phi-series models — contributing to
+          pre-training with compact world models and building out the RL post-training stack.
         </p>
         <p>
-          I completed my Masters at the University of Cambridge in the MPhil Machine Learning, Speech and Language Technology
-          Program, supervised by <a href="http://mlg.eng.cam.ac.uk/zoubin/">Zoubin Ghahramani</a> and
-          <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Yarin Gal</a> in the Cambridge Machine Learning Group.
-          Prior to that, I studied Electronic and Electrical Engineering at University College London, working with
-          <a href="http://www0.cs.ucl.ac.uk/staff/J.Shawe-Taylor/">John Shawe-Taylor</a> and
-          <a href="https://scholar.google.com/citations?user=1XgR518AAAAJ&hl=en">Guy Lever</a>, and had the fortune of working
-          with <a href="https://www.davidsilver.uk/">David Silver</a> at Google DeepMind during my undergraduate thesis.
+          I completed my PhD in Machine Learning at <a href="http://mila.umontreal.ca">Mila – Quebec AI Institute</a>
+          and McGill University, supervised by <a href="https://mila.quebec/en/person/doina-precup/">Doina Precup</a> and
+          Joelle Pineau, with Yoshua Bengio and John Langford as co-advisors. My thesis was on
+          <em>Latent State Discovery for Robust, Reusable and Reliable Deep RL</em>.
         </p>
-        <p>
-          My research centers on reinforcement learning, representation learning, and world models — including
-          latent state discovery, offline RL, and building compact, plannable representations for control and reasoning.
+        <p class="research-interests">
+          <strong>Research Interests:</strong> Agentic AI and World Models; Latent State Discovery for Planning and
+          Exploration; Disentangled Representation Learning; General Value Functions (GVFs); Generative Models;
+          Multi-Modal Learning.
         </p>
       </div>
+
+      <section class="home-section" id="experience">
+        <h3>Industry Research Experience</h3>
+        <ul>
+          <li>
+            <span class="entry-role">Member of Technical Staff — RL Post-Training | Final Climb Vision-Language Models</span>
+            <span class="entry-meta">Microsoft AI (MAI), New York — Aug 2026 – Present</span>
+            <span class="entry-collab">Collaborators: Ali Farhadi, John Langford, Ranjay Krishna</span>
+          </li>
+          <li>
+            <span class="entry-role">Senior Research Scientist — RL Post-Training | Pre-Training | Big Climb | World Models</span>
+            <span class="entry-meta">Microsoft Research AI Frontiers, New York — Jan 2025 – Present</span>
+            <span class="entry-collab">Collaborators: John Langford, Alex Lamb, Kwangjun Ahn, Tim Pearce, Manan Tomar</span>
+          </li>
+          <li>
+            <span class="entry-role">Senior Research Scientist — Post-Training and Safety Alignment</span>
+            <span class="entry-meta">HUMAIN, Riyadh — Jul 2024 – Jan 2025</span>
+            <span class="entry-collab">Collaborators: M Saiful Bari, Ehsan Hoque</span>
+          </li>
+          <li>
+            <span class="entry-role">Research Scientist (Founding Member) — RL &amp; Flow Matching for Protein Structure Design</span>
+            <span class="entry-meta">DreamFold AI, Montreal — Jun 2023 – Jul 2024</span>
+            <span class="entry-collab">Collaborators: Alex Tong, Joey Bose</span>
+          </li>
+          <li>
+            <span class="entry-role">Student Researcher — Factorized Latent Representations in RL</span>
+            <span class="entry-meta">Microsoft Research, Montreal — Apr 2022 – Apr 2023</span>
+            <span class="entry-collab">Collaborators: R. Tachet des Combes, R. Laroche, H. van Seijen, A. Lamb, J. Langford, D. Misra, A. Krishnamurthy</span>
+          </li>
+          <li>
+            <span class="entry-role">Research Scientist Intern — Representation Learning for World Models in RL</span>
+            <span class="entry-meta">Apple MLR, California — Jan 2022 – Apr 2022</span>
+            <span class="entry-collab">Collaborators: Devon Hjelm, Samy Bengio</span>
+          </li>
+          <li>
+            <span class="entry-role">Research Scientist Intern — Provable RL for Latent State Discovery</span>
+            <span class="entry-meta">Microsoft Research, New York City — Apr 2021 – Dec 2021</span>
+            <span class="entry-collab">Collaborators: Alex Lamb, John Langford, Akshay Krishnamurthy, Dylan Foster, Yonathan Efroni, Dipendra Misra</span>
+          </li>
+        </ul>
+
+        <h4>Academic Research Experience</h4>
+        <ul>
+          <li>
+            <span class="entry-role">Student Researcher Intern — Reproducibility in Deep RL, Active Imitation Learning</span>
+            <span class="entry-meta">Microsoft Research, Montreal — Jun 2017 – May 2019</span>
+            <span class="entry-collab">Collaborators: Phillip Bachman, Alessandro Sordoni, John Langford</span>
+          </li>
+          <li>
+            <span class="entry-role">Improved State Estimation for a Resilient Spacecraft Executive (with NASA JPL)</span>
+            <span class="entry-meta">Caltech (SURF) — Jun – Aug 2015</span>
+            <span class="entry-collab">Supervisors: R. Murray, C. McGhan</span>
+          </li>
+          <li>
+            <span class="entry-role">Active Learning for Images using Bayesian Deep Learning Uncertainty</span>
+            <span class="entry-meta">University of Cambridge — Mar – Sep 2016</span>
+            <span class="entry-collab">Supervisors: Z. Ghahramani, Y. Gal</span>
+          </li>
+          <li>
+            <span class="entry-role">Improving Convergence of Deterministic Policy Gradient Algorithms in RL</span>
+            <span class="entry-meta">UCL — Sep 2015 – Mar 2016</span>
+            <span class="entry-collab">Supervisors: J. Shawe-Taylor, G. Lever; and D. Silver</span>
+          </li>
+          <li>
+            <span class="entry-role">Cost-Sensitive Decision Tree of Classifiers for Medical Data</span>
+            <span class="entry-meta">Johns Hopkins University (SRE) — Jun – Aug 2014</span>
+            <span class="entry-collab">Supervisor: Suchi Saria</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="home-section" id="education">
+        <h3>Education</h3>
+        <ul>
+          <li>
+            <span class="entry-role">PhD in Machine Learning</span>
+            <span class="entry-meta">McGill University &amp; Mila – Quebec AI Institute, Montreal — Sep 2017 – Sep 2022</span>
+            <span class="entry-collab">Supervisors: Doina Precup, Joelle Pineau; Co-Advisors: Yoshua Bengio, John Langford. Thesis: Latent State Discovery for Robust, Reusable and Reliable Deep RL.</span>
+          </li>
+          <li>
+            <span class="entry-role">MPhil, Machine Learning, Speech &amp; Language Technology</span>
+            <span class="entry-meta">University of Cambridge, St John's College — Sep 2015 – Aug 2016</span>
+            <span class="entry-collab">Supervisors: Zoubin Ghahramani, Yarin Gal. Thesis: Active Learning with Image Data using Bayesian Uncertainty in Deep Learning.</span>
+          </li>
+          <li>
+            <span class="entry-role">BEng, Electronic &amp; Electrical Engineering (ML Major)</span>
+            <span class="entry-meta">University College London — Sep 2011 – Jul 2015</span>
+            <span class="entry-collab">Supervisors: John Shawe-Taylor, Guy Lever; Co-Advisor: David Silver. Thesis: Analysing Convergence of Deep Policy Optimization in RL; Deterministic Policy Gradient Methods.</span>
+          </li>
+        </ul>
+      </section>
 
       <section class="home-section" id="publications">
         <h3>Selected Publications</h3>
         <ul>
-          <li><a href="https://arxiv.org/abs/2511.05963">Next-Latent Prediction Transformers Learn Compact World Models</a> — In Submission</li>
-          <li><a href="https://arxiv.org/pdf/2510.07312">h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning</a> — ICML 2026 (Spotlight)</li>
-          <li><a href="https://arxiv.org/pdf/2601.21718">When Does Predictive Inverse Dynamics Outperform Behavior Cloning?</a> — ICML 2026</li>
-          <li><a href="https://arxiv.org/pdf/2502.01316">Learning Fused State Representations for Control from Multi-View Observations</a> — ICML 2025</li>
-          <li><a href="https://arxiv.org/pdf/2405.20313">Sequence-Augmented SE(3)-Flow Matching for Conditional Protein Backbone Generation</a> — NeurIPS 2024</li>
-          <li><a href="https://arxiv.org/abs/2311.03534">PcLast: Discovering Plannable Continuous Latent States</a> — ICML 2024</li>
-          <li><a href="https://arxiv.org/abs/2211.00164">Agent-Controller Representations: Principled Offline RL with Rich Exogenous Information</a> — ICML 2023</li>
-          <li><a href="https://arxiv.org/abs/1901.10902">InfoBot: Transfer and Exploration via the Information Bottleneck</a> — ICLR 2019</li>
-          <li><a href="https://arxiv.org/pdf/1709.06560.pdf">Deep Reinforcement Learning that Matters</a> — AAAI 2018</li>
+          <li>Jayden Teoh, Manan Tomar, John Langford, <strong>Riashat Islam</strong>, et al. "<a href="https://arxiv.org/abs/2511.05963">Next-Latent Prediction Transformers Learn Compact World Models</a>" — NeurIPS 2026</li>
+          <li>Alesia Ivanova, Sumeet Ramesh Motwani, <strong>Riashat Islam</strong>, et al. "<a href="https://arxiv.org/pdf/2510.07312">h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning</a>" — ICML 2026 (Spotlight)</li>
+          <li>Tejas Krishnan, Sumeet Ramesh Motwani, <strong>Riashat Islam</strong>, et al. "Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains" — ICML 2026</li>
+          <li>Zeyu Wang, Yao-Hui Li, Xin Li, Hongyu Zang, <strong>Riashat Islam</strong>. "<a href="https://arxiv.org/pdf/2502.01316">Learning Fused State Representations for Control from Multi-View Observations</a>" — ICML 2025</li>
+          <li>Guillaume Huguet, James Vuckovic, <strong>Riashat Islam</strong>, et al. "<a href="https://arxiv.org/pdf/2405.20313">Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation</a>" — NeurIPS 2024</li>
+          <li>Ruixiang Sun, Hongyu Zang, Xin Li, <strong>Riashat Islam</strong>. "<a href="https://arxiv.org/pdf/2405.06263">Learning Latent Dynamic Robust Representations for World Models</a>" — ICML 2024</li>
+          <li>Md Mofijul Islam, Alexi Gladstone, <strong>Riashat Islam</strong>, Tariq Iqbal. "EQA-MX: Embodied Question Answering using Multimodal Expression" — ICLR 2024 (Spotlight)</li>
+          <li><strong>Riashat Islam*</strong>, Manan Tomar*, et al. "<a href="https://arxiv.org/abs/2211.00164">Agent-Controller Representations: Principled Offline RL with Rich Exogenous Information</a>" — ICML 2023</li>
+          <li>Manan Tomar, <strong>Riashat Islam</strong>, Matthew E. Taylor, Philip Bachman, Sergey Levine. "<a href="https://arxiv.org/pdf/2303.06121">Ignorance is Bliss: Robust Control via Information Gating</a>" — NeurIPS 2023</li>
+          <li>Alex Lamb*, <strong>Riashat Islam*</strong>, et al. "<a href="https://arxiv.org/pdf/2207.08229.pdf">Guaranteed Discovery of Controllable Latent States with Multi-Step Inverse Models</a>" — TMLR 2023</li>
+          <li><strong>Riashat Islam</strong>, Hongyu Zang, et al. "<a href="https://arxiv.org/abs/2211.00247">Discrete Factorial Representations as an Abstraction for Goal Conditioned Reinforcement Learning</a>" — NeurIPS 2022</li>
         </ul>
-      </section>
+        <p class="pub-note">For a complete list of publications, see my <a href="https://scholar.google.ca/citations?hl=en&user=2_4Rs44AAAAJ&view_op=list_works">Google Scholar profile</a>.</p>
 
-      <section class="home-section" id="experience">
-        <h3>Research Experience</h3>
+        <h4>Journals and Patents</h4>
         <ul>
-          <li>(Feb'25 – Present) Senior Research Scientist, Microsoft Research</li>
-          <li>(Jul'24 – Feb'25) Senior Research Consultant, SDAIA</li>
-          <li>(Sep'23 – Jul'24) Research Scientist, DreamFold AI</li>
-          <li>(Jun'23 – Oct'23) Research Intern, Morgan Stanley, NYC</li>
-          <li>(Jan'22 – Apr'23) Student Researcher, Microsoft Research (Advisor: J. Langford, H. Seijen, R.T.D Combes)</li>
-          <li>(Jun'22 – Sep'22) Research Intern, Apple MLR (Advisor: Devon Hjelm, Samy Bengio)</li>
-          <li>(Jun'21 – Nov'21) Research Intern, Microsoft Research NYC (Advisor: John Langford)</li>
-        </ul>
-      </section>
-
-      <section class="home-section">
-        <h3>Academic Places</h3>
-        <ul>
-          <li>(2017 – 2022) PhD, McGill University (Supervisor: Doina Precup)</li>
-          <li>(2016 – 2017) MPhil, University of Cambridge (Supervisor: Zoubin Ghahramani)</li>
-          <li>(2011 – 2015) Undergraduate, University College London (Supervisor: John Shawe-Taylor)</li>
-        </ul>
-      </section>
-
-      <section class="home-section">
-        <h3>Research Interests</h3>
-        <ul>
-          <li>Deep Reinforcement Learning</li>
-          <li>Latent State Discovery, State Abstraction &amp; Representation Learning</li>
-          <li>Offline Reinforcement Learning</li>
-          <li>Probabilistic Models and Bayesian Deep Learning</li>
-          <li>Deep Generative Models, Approximate and Bayesian Inference</li>
+          <li>Alex Lamb*, <strong>Riashat Islam*</strong>, et al. "Guaranteed Discovery of Controllable Latent States." Patent: Under Submission with Microsoft Research</li>
+          <li>Vincent Francois-Lavet, Peter Henderson, <strong>Riashat Islam</strong>, Marc G. Bellemare, Joelle Pineau. "An Introduction to Deep Reinforcement Learning." Foundations and Trends in Machine Learning, 2018</li>
         </ul>
       </section>
     </main>
