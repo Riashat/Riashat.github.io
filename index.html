@@ -1,1453 +1,270 @@
-
-<!-- saved from url=(0041)https://people.eecs.berkeley.edu/~barron/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
+  <title>Riashat Islam</title>
+  <meta name="description" content="Senior Research Scientist at Microsoft Research. Reinforcement learning, representation learning, and world models.">
+  <link rel="canonical" href="https://riashat.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Riashat Islam">
+  <meta property="og:description" content="Senior Research Scientist at Microsoft Research. Reinforcement learning, representation learning, and world models.">
+  <meta property="og:url" content="https://riashat.github.io/">
+  <meta property="og:image" content="https://riashat.github.io/images/Riashat_Image.jpg">
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --accent: #07889b;
+      --accent-hover: #e37222;
+      --border: #e6e6e6;
+      --max-width: 760px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
     a {
-    color: #07889b; /*#1772d0;*/
-    text-decoration:none;
+      color: var(--accent);
+      text-decoration: none;
     }
-    a:focus, a:hover {
-    color: #e37222; /*#f7b733;*/ /*f09228;*/
-    text-decoration:none;
+    a:hover, a:focus {
+      color: var(--accent-hover);
     }
-    body,td,th,tr,p,a {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 15px; /*14*/
+    .skip-link {
+      position: absolute;
+      left: -9999px;
     }
-    strong {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 15px; /*14*/
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
     }
-    heading {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 22px;
-    color: #e37222; /*#fc4a1a;*/
+    .site-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
     }
-    heading2 {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 18px;
+    .portrait img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
     }
-    papertitle {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 15px; /*14*/
-    font-weight: 700;
+    .site-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 0 12px;
     }
-    name {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 42px;
+    .site-title a {
+      color: var(--text);
     }
-    li:not(:last-child) {
-        margin-bottom: 5px;
+    .desktop-menu ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      padding: 0;
+      margin: 0;
     }
-    .one
-    {
-    width: 260px;
-    height: 160px;
-    position: relative;
+    .desktop-menu a {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
     }
-    .two
-    {
-    width: 260px;
-    height: 160px;
-    position: absolute;
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
+    .desktop-menu a[aria-current="page"] {
+      color: var(--text);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 4px;
     }
-    .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
+    .biography p {
+      margin: 0 0 16px;
     }
-    span.highlight {
-        background-color: #ffffd0;
+    .home-section {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
     }
-  </style>  
-
-<title>Riashat Islam</title>
-  <link href="./_files/css" rel="stylesheet" type="text/css">
-  <style id="dark-reader-style" type="text/css">@media screen {
-
-/* Leading rule */
-/*html {
-  -webkit-filter: brightness(100%) contrast(100%) grayscale(20%) sepia(10%) !important;
-}*/
-
-/* Text contrast */
-html {
-  text-shadow: 0 0 0 !important;
-}
-
-/* Full screen */
-*:-webkit-full-screen, *:-webkit-full-screen * {
-  -webkit-filter: none !important;
-}
-
-/* Page background */
-html {
-  background: rgb(255,255,255) !important;
-}
-
-}</style>
-
-<script type="text/javascript">
-   function visibility_on(id) {
-        var e = document.getElementById(id+"_text");
-        if(e.style.display == 'none')
-            e.style.display = 'block';
-        var e = document.getElementById(id+"_img");
-        if(e.style.display == 'none')
-            e.style.display = 'block';
-   }
-   function visibility_off(id) {
-        var e = document.getElementById(id+"_text");
-        if(e.style.display == 'block')
-            e.style.display = 'none';
-        var e = document.getElementById(id+"_img");
-        if(e.style.display == 'block')
-            e.style.display = 'none';
-   }
-   function toggle_visibility(id) {
-       var e = document.getElementById(id+"_text");
-       if(e.style.display == 'inline')
-          e.style.display = 'block';
-       else
-          e.style.display = 'inline';
-       var e = document.getElementById(id+"_img");
-       if(e.style.display == 'inline')
-          e.style.display = 'block';
-       else
-          e.style.display = 'inline';
-   }
-   function toggle_vis(id) {
-       var e = document.getElementById(id);
-       if (e.style.display == 'none')
-           e.style.display = 'inline';
-       else
-           e.style.display = 'none';
-   }
-</script>
-
-
-
-
+    .home-section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+    }
+    .home-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .home-section li {
+      margin-bottom: 10px;
+      padding-left: 16px;
+      position: relative;
+    }
+    .home-section li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+    .pub-year {
+      font-weight: 600;
+      color: var(--muted);
+      margin: 24px 0 12px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .site-footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-social a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-social a:hover {
+      color: var(--accent-hover);
+    }
+    .site-description {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    @media (max-width: 500px) {
+      .desktop-menu ul { gap: 14px; }
+    }
+  </style>
 </head>
-  <body><div id="StayFocusd-infobar" style="display: none; top: 2400px;">
-    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
-    <span id="StayFocusd-infobar-msg"></span>
-    <span id="StayFocusd-infobar-links">
-        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a id="StayFocusd-infobar-hide">hide once</a>
-    </span>
-</div>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tbody><tr>
-    <td>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tbody><tr>
-        <td width="67%" valign="middle">
-        <p align="center">
-        <name>Riashat Islam</name><br>
-        riashat dot islam dot 93 at gmail dot com
-        </p>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="container">
+    <header class="site-header">
+      <div class="portrait">
+        <img src="./images/Riashat_Image.jpg" alt="Riashat Islam" width="140" height="140">
+      </div>
+      <h1 class="site-title"><a href="/">Riashat Islam</a></h1>
+      <nav class="desktop-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="#main" aria-current="page">About</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Experience</a></li>
+        </ul>
+      </nav>
+    </header>
 
-
-        <p>I am a Senior Research Scientist at Microsoft Research. Previously, I was a PhD student supervised by <a href="https://mila.quebec/en/person/doina-precup/">Doina Precup</a> in the Reasoning and Learning Lab at McGill University and a part of <a href="http://mila.umontreal.ca">Mila - Quebec AI Institute</a>, while also working as a Student Researcher at Microsoft Research NYC and Microsoft Research Montreal, where I work with <a href="https://www.hunch.net/~jl/">John Langford</a>, <a href="https://scholar.google.com/citations?user=BFzFy1YAAAAJ&hl=en">Alex Lamb</a>, <a href="https://dipendramisra.com/">Dipendra Misra</a>, <a href="https://www.microsoft.com/en-us/research/people/retachet/">Remi Tachet Des Combes</a>, <a href="https://www.microsoft.com/en-us/research/people/rolaroch/">Romain Laroche</a> and <a href="https://www.microsoft.com/en-us/research/people/havansei/">Harm Van Seijen</a>. During my PhD, I also did a research internship at Microsoft Research Montreal, working with <a href="https://scholar.google.ca/citations?user=REMIv-kAAAAJ&hl=en">Phil Bachman</a>. I also collaborate closely with <a href="https://anirudh9119.github.io/">Anirudh Goyal</a> and <a href="https://yoshuabengio.org/">Yoshua Bengio</a>. For past and present collaborators, please see the <a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en">list here</a>.
-        </p>
-
+    <main id="main" tabindex="-1">
+      <div class="biography">
         <p>
-        I completed my Masters at University of Cambridge in the <a href="https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl">MPhil Machine Learning, Speech and Language Technology Program</a>, under the supervision of <a href="http://mlg.eng.cam.ac.uk/zoubin/">Zoubin Ghahramani</a> and <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Yarin Gal</a> in the <a href="http://mlg.eng.cam.ac.uk/">Cambridge Machine Learning Group</a>. My Masters was funded by the Cambridge Commonwealth and International Trust, and I was a member of St John's College, Cambridge. 
+          I am a Senior Research Scientist at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>.
+          Previously, I was a PhD student supervised by <a href="https://mila.quebec/en/person/doina-precup/">Doina Precup</a>
+          in the Reasoning and Learning Lab at McGill University, part of <a href="http://mila.umontreal.ca">Mila – Quebec AI Institute</a>,
+          while also working as a Student Researcher at Microsoft Research NYC and Montreal with
+          <a href="https://www.hunch.net/~jl/">John Langford</a>, <a href="https://scholar.google.com/citations?user=BFzFy1YAAAAJ&hl=en">Alex Lamb</a>,
+          <a href="https://dipendramisra.com/">Dipendra Misra</a>, <a href="https://www.microsoft.com/en-us/research/people/retachet/">Remi Tachet Des Combes</a>,
+          <a href="https://www.microsoft.com/en-us/research/people/rolaroch/">Romain Laroche</a>, and
+          <a href="https://www.microsoft.com/en-us/research/people/havansei/">Harm Van Seijen</a>. I also collaborate closely with
+          <a href="https://anirudh9119.github.io/">Anirudh Goyal</a> and <a href="https://yoshuabengio.org/">Yoshua Bengio</a>.
+          For past and present collaborators, see the <a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en">full list here</a>.
         </p>
-
         <p>
-        Prior to that I studied Electronic and Electrical Engineering at University College London working under supervision of <a href="http://www0.cs.ucl.ac.uk/staff/J.Shawe-Taylor/">John Shawe-Taylor</a> and <a href="https://scholar.google.com/citations?user=1XgR518AAAAJ&hl=en">Guy Lever</a> from the Centre of Computational Statistics and Machine Learning and Gatsby Computational and Neuroscience Unit at UCL. I also had a great fortune working with <a href="https://www.davidsilver.uk/">David Silver</a> from Google DeepMind during my undergraduate thesis.
+          I completed my Masters at the University of Cambridge in the MPhil Machine Learning, Speech and Language Technology
+          Program, supervised by <a href="http://mlg.eng.cam.ac.uk/zoubin/">Zoubin Ghahramani</a> and
+          <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">Yarin Gal</a> in the Cambridge Machine Learning Group.
+          Prior to that, I studied Electronic and Electrical Engineering at University College London, working with
+          <a href="http://www0.cs.ucl.ac.uk/staff/J.Shawe-Taylor/">John Shawe-Taylor</a> and
+          <a href="https://scholar.google.com/citations?user=1XgR518AAAAJ&hl=en">Guy Lever</a>, and had the fortune of working
+          with <a href="https://www.davidsilver.uk/">David Silver</a> at Google DeepMind during my undergraduate thesis.
         </p>
-
         <p>
-		I was also a summer research student at California Institute of Technology (Caltech) in the Summer Undergraduate Research Fellowship program (SURF) where I worked under supervision of Richard Murray in the Control and Dynamical Systems Lab, under a project in collaboration with the NASA Jet Propulsion Laboratory (JPL), and Keck Institute for Space Studies.  Before that, I was a summer research student in the Machine Learning Group at Johns Hopkins University working under supervision of Suchi Saria.
+          My research centers on reinforcement learning, representation learning, and world models — including
+          latent state discovery, offline RL, and building compact, plannable representations for control and reasoning.
         </p>
-
-
-
-        <p align="center">
-		<a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-		<a href="https://github.com/Riashat/"> GitHub </a> &nbsp;/&nbsp;
-		<a href="https://dblp.org/search?q=Islam%2C%20Riashat/"> DBLP </a> &nbsp;/&nbsp;
-		<a href="https://twitter.com/riashatislam"> Twitter </a> &nbsp;/&nbsp;
-		<a href="https://www.linkedin.com/in/riashatislam/"> LinkedIn </a>
-        </p>
-        </td>
-        <td  width=250 height=250>
-        <img src="./images/Riashat_Image.jpg"  width=250 height=250>
-        </td>
-      </tr>
-  </tbody></table>
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <heading>Academic Places</heading>
-        <tbody><tr><td>
-            <ul>
-              <li> (2017 - 2022) PhD, McGill University (Supervisor : Doina Precup) </li>
-              <li> (2016 - 2017) MPhil, University of Cambridge (Supervisor : Zoubin Ghahramani) </li>
-              <li> (2011 - 2015) Undergraduate, University College London, UCL (Supervisor : John Shawe-Taylor) </li>
-              </div>
-            </ul>
-        </td></tr>
-     </tbody></table>
-
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <heading>Research Work Experience </heading>
-        <tbody><tr><td>
-            <ul> 
-	      <li> (Feb'25 - Present) Senior Research Scientist, Microsoft Research </li>    
-	      <li> (Jul'24 - Feb'25) Senior Research Consultant, SDAIA </li>      
-              <li> (Sep'23 - Jul'24) Research Scientist, DreamFold AI </li>      
-              <li> (Jun'23 - Oct'23) Research Intern, Morgan Stanley, NYC </li>
-              <li> (Jan'22 - Apr'23) Student Researcher, Microsoft Research 
-              (Advisor : J. Langford, H. Seijen, R.T.D Combes)</li>
-	      <li> (Jun'22 - Sep'22) Research Intern, Apple MLR (Advisor : Devon Hjelm, Samy Bengio)</li>
-              <li> (Jun'21 - Nov'21) Research Intern, Microsoft Research NYC (Advisor : John Langford)</li>
-	      <li> (Oct'20 - Feb'21) Student Researcher, Borealis AI (Advisor : Yanshuai Cao) </li>  
-              <li> (Jan'18 - Feb'19) Student Researcher, Microsoft Research Montreal (Advisor : Phil Bachman) </li>  
-              <li> (Oct'17 - Dec'17) Research Intern, Microsoft Research Montreal, Maluuba (Advisor : Phil Bachman) </li> 
-              <li> (Jun'15 - Oct'15) Research Intern, Caltech Surf Program (Advisor : Richard Murray) </li>   
-              <li> (Jun'14 - Oct'14) Research Intern, Johns Hopkins SRE Program (Advisor : Suchi Saria) </li>
-              <li> (Jun'13 - May'14) Industrial Placement Intern, J.P. Morgan </li> 
-              <li> (Jun'12 - Oct'12) Intern, Deutsche Bank </li>   
-              </div>
-            </ul>
-        </td></tr>
-     </tbody></table>
-
-
-<!--         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <heading>Research Interests</heading>
-        <tbody><tr><td>
-            <ul>
-              <li> At <a href="https://icml.cc/"> ICML 2020</a>, we are  organizing a workshop on <a href="http://biases-invariances-generalization.github.io/"> inductive biases, invariances and generalization in reinforcement learning. </a> </li>
-              <li> At <a href="https://iclr.cc/"> ICLR 2020</a>, we organized a workshop on <a href="http://causalrlworkshop.github.io/"> causal learning for decision making</a>. </li>
-              <li> In summers of 2019, I was a visitor at Prof. Bernhard Scholkopf's lab.
-              <li> In fall and summers of 2018, I was a visitor at Prof. Sergey Levine's lab.
-              <li> At <a href="https://2018.icml.cc">ICML 2018</a>, we organized a workshop on  <a href="https://sites.google.com/view/creditassignmentindlanddrl/home">efficient credit assignment in deep learning and deep reinforcement learning. </a></li>              
-               <li> At <a href="https://2017.icml.cc">ICML 2017</a>, we organized the first <a href="https://sites.google.com/view/icml-reproducibility-workshop/home"> workshop on reproducibility in machine learning</a>.</li>
-              </div>
-            </ul>
-        </td></tr>
-     </tbody></table> -->
-
-
-<!--      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <heading>Invited Talks and Lectures</heading>
-        <tbody><tr><td>
-            <ul>
-              <li> In Oct 2021, I gave a talk on <a href="https://arxiv.org/abs/2011.15091"> Inductive Biases for Deep Learning of Higher Level Cognition </a> at Machine Learning Department, CMU. </li>
-              <li> In Oct 2021, I gave a talk on <a href="https://arxiv.org/abs/2011.15091"> Inductive Biases for Deep Learning of Higher Level Cognition </a> at Microsoft Research, New York. </li>
-              <li> In Feb 2021, I gave a talk on <a href="https://arxiv.org/abs/2011.15091"> Inductive Biases for Deep Learning of Higher Level Cognition </a> at University of Toronto. </li>
-              <li> In Feb 2021, I gave a talk on <a href="https://arxiv.org/abs/2102.11107"> Towards Causal Representation Learning </a> at ETH Zurich. </li>
-              <li> In Jan 2021, I gave a talk on <a href="https://youtu.be/hwl6rgb2kQg"> Recurrent Independent Mechanisms </a> at Yahoo Research.</li>
-              <li> In April 2020, I gave a talk on <a href="https://youtu.be/hwl6rgb2kQg"> Modularity, Attention and Efficient Credit Assignment </a> at the IAS Workshop on New Directions in Optimization Statistics and Machine Learning. </li>
-              <li> In April 2019, I gave a talk at Microsoft Research in Redmond, Seattle on Recurrent Independent Mechanisms. </li>
-              <li> In April 2019, I gave a talk at Mila on <a href="https://www.youtube.com/watch?v=e3EJzOyJZE4">  Inductive Biases, Invariances and Generalization. </a> </li>
-              <li> In April 2018, I gave an invited talk at <a href="http://dalimeeting.org/dali2018/program"> DALI'2018. </a>  </li> 
-              <li> In April 2018, I gave an invited talk at <a href="https://www.ucl.ac.uk/"> UCL Machine Learning Department. </a> </li>
-           </ul>
-        </td></tr>
-     </tbody></table>
- -->
-
-<!--      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <heading><a name="mentoring"></a> Mentoring </heading>
-      </table>
-      <table width="100%" align="center" border="0" cellpadding="20">
-      <tbody><tr>
-        <td width="75%" valign="center">
-         <strong>Current </strong>
-         <br>
-         <a href="http://www.aniketdidolkar.in/"> Aniket Didolkar</a>
-         <br>
-         <a href="https://scholar.google.com/citations?user=93YSbawAAAAJ&hl=en&oi=ao"> Vedant Shah </a>
-         <br>
-         <a href="https://nikhilbarhate99.github.io/"> Nikhil Barhate </a>
-         <br>
-         <a href="https://scholar.google.com/citations?user=oc2OOyMAAAAJ&hl=en&oi=ao"> Frederik Träuble </a>
-         <br>
-         <a href="https://mihirp1998.github.io/"> Mihir Prabhudesai </a>
-         <br>
-         
-         <strong> Past </strong>
-         <br>
-         <a href="https://mila.quebec/en/person/soumye-singhal/"> Soumye Singhal </a>
-         <br>
-         <a href="http://www.cs.toronto.edu/~sinhasam/">Samarth Sinha</a>
-         <br>
-         <a href="https://sarthmit.github.io"> Sarthak Mittal </a>
-         <br>
-         <a href="https://phanideepgampa.github.io/"> Phanideep Gampa </a>
-         <br>
-         <a href="https://ossamaahmed.github.io/"> Ossama Ahmed </a>
-         <br>
-         <a href="https://kartikeya-badola.github.io/index.html"> Kartikeya Badola </a>
-         <br>
-         <a href="https://openreview.net/profile?id=~Kanika_Madan3"> Kanika Madan </a>
-         <br>
-         <a href="https://yashasannadani.com/"> Yashas Annadani </a>
-         <br>
-
-
-        </p>
-        </td>
-      </tr>
-      </tbody></table> 
- -->
-     <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-       <heading>Publications</heading> <br><br>
-          <!-- -->
-
-		<div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-			onmouseout="document.getElementById('hrssm').style.display='none';">
-		  <a href="https://arxiv.org/abs/2511.05963">
-			<papertitle> Next-Latent Prediction Transformers Learn Compact World Models </papertitle></a>
-			<br>
-			 Jayden Teoh, Manan Tomar, Kwangjun Ahn, Edward S. Hu, Tim Pearce, Pratyusha Sharma, Akshay Krishnamurthy,  <a><i>Riashat Islam</i></a>, Alex Lamb, John Langford
-			<br>
-		  <a href="https://jaydenteoh.github.io/blog/2026/nextlat/"> Blog Post </a> 
-		  <a href="https://jaydenteoh.github.io/blog/2026/nextlat/"> In Submission </a> 
-		</div>
-		<div id="multi-view-reps" style="display:none">  
-		  </div><br>
-
-		 
-		<div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-			onmouseout="document.getElementById('hrssm').style.display='none';">
-		  <a href="https://arxiv.org/pdf/2510.07312">
-			<papertitle> h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning </papertitle></a>
-			<br>
-			 Alesia Ivanova, Sumeet Ramesh Motwani, Ziyang Cai, Philip Torr, <a><i>Riashat Islam</i></a>, Shital Shah, Christian Schroeder de Witt, Charles London
-			<br>
-		  <a href="https://arxiv.org/pdf/2510.07312">ICML 2026 (SPOTLIGHT!) </a>  
-		</div>
-		<div id="multi-view-reps" style="display:none">  
-		  </div><br>
-
-		 
-		<div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-			onmouseout="document.getElementById('hrssm').style.display='none';">
-		  <a href="">
-			<papertitle> 	Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains </papertitle></a>
-			<br>
-			Tejas Krishnan, Sumeet Ramesh Motwani, Charles London, Suhaas M Bhat, Huitian Jiao, Philip Torr, <a><i>Riashat Islam</i></a>, Christopher Summerfield, Christian Schroeder de Witt, Qilong Gu, Shital Shah
-			<br>
-		  <a href="">ICML 2026 </a>  
-		</div>
-		<div id="multi-view-reps" style="display:none">  
-		  </div><br>
-
-		 
-		<div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-			onmouseout="document.getElementById('hrssm').style.display='none';">
-		  <a href="https://arxiv.org/pdf/2601.21718">
-			<papertitle> When Does Predictive Inverse Dynamics Outperform Behavior Cloning? </papertitle></a>
-			<br>
-			 Lukas Schäfer, Pallavi Choudhury, Abdelhak Lemkhenter, Chris Lovett, Somjit Nath, Luis França, Matheus Ribeiro Furtado de Mendonça, Alex Lamb, <a><i>Riashat Islam</i></a>, Siddhartha Sen, John Langford, Katja Hofmann, Sergio Valcarcel Macua
-			<br>
-		  <a href="https://arxiv.org/pdf/2601.21718">ICML 2026 </a>  
-		</div>
-		<div id="multi-view-reps" style="display:none">  
-		  </div><br>
-		 
-		<div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-			onmouseout="document.getElementById('hrssm').style.display='none';">
-		  <a href="https://arxiv.org/pdf/2602.03201">
-			<papertitle> From Scalar Rewards to Potential Trends: Shaping Potential Landscapes for Model-Based Reinforcement Learning </papertitle></a>
-			<br>
-			 Yao-Hui Li, Zeyu Wang, Xin Li, Wei Pang, Yingfang Yuan, Zhengkun Chen, Boya Zhang, <a><i>Riashat Islam</i></a>, Alex Lamb, Yonggang Zhang
-			<br>
-		  <a href="https://arxiv.org/pdf/2602.03201">(In Submission) </a>  
-		</div>
-		<div id="multi-view-reps" style="display:none">  
-		  </div><br>
-		 
-		 
-		 <div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-			onmouseout="document.getElementById('hrssm').style.display='none';">
-		  <a href="https://www.arxiv.org/pdf/2510.04507">
-			<papertitle> Wavelet Predictive Representations for Non-Stationary Reinforcement Learning </papertitle></a>
-			<br>
-			 Min Wang, Xin Li, Ye He, Yao-Hui Li, Hasnaa Bennis, <a><i>Riashat Islam</i></a>, Mingzhong Wang
-			<br>
-		  <a href="https://www.arxiv.org/pdf/2510.04507">ICLR 2026 </a>  
-		</div>
-		<div id="multi-view-reps" style="display:none">  
-		  </div><br>
-		 
-		 
-		 <div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-                onmouseout="document.getElementById('hrssm').style.display='none';">
-              <a href="https://arxiv.org/pdf/2502.01316">
-                <papertitle> Learning Fused State Representations for Control from Multi-View Observations </papertitle></a>
-                <br>
-                 Zeyu Wang, Yao-Hui Li, Xin Li, Hongyu Zang, Romain Laroche, <a><i>Riashat Islam</i></a>
-                <br>
-              <a href="https://arxiv.org/pdf/2502.01316">ICML 2025 </a>  
-            </div>
-            <div id="multi-view-reps" style="display:none">  
-              </div><br>
-	     
-	     
-	     <div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-                onmouseout="document.getElementById('hrssm').style.display='none';">
-              <a href="https://arxiv.org/pdf/2405.20313">
-                <papertitle> Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation </papertitle></a>
-                <br>
-                 Guillaume Huguet, James Vuckovic, Kilian Fatras, Eric Thibodeau-Laufer, Pablo Lemos, <a><i>Riashat Islam</i></a>, Cheng-Hao Liu, Jarrid Rector-Brooks, Tara Akhound-Sadegh, Michael Bronstein, Alexander Tong, Avishek Joey Bose 
-                <br>
-              <a href="https://arxiv.org/pdf/2405.20313">NeurIPS 2024</a>  
-            </div>
-            <div id="hybrid-rssm" style="display:none">  
-              </div><br>
-
-	     <div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-                onmouseout="document.getElementById('hrssm').style.display='none';">
-              <a href="https://arxiv.org/pdf/2407.03154">
-                <papertitle> Reinforcement Learning for Sequence Design Leveraging Protein Language Models </papertitle></a>
-                <br>
-                 Jithendaraa Subramanian, Shivakanth Sujit, Niloy Irtisam, Umong Sain, Derek Nowrouzezahrai, Samira Ebrahimi Kahou, <a><i>Riashat Islam</i></a>
-                <br>
-              <a href="https://arxiv.org/pdf/2407.03154">In Submission, Benchmarks Track</a>  
-            </div>
-            <div id="hybrid-rssm" style="display:none">  
-              </div><br>
-
-
-	     
-	     
-	     <div onmouseover="document.getElementById('hrssm').style.display = 'block';"
-                onmouseout="document.getElementById('hrssm').style.display='none';">
-              <a href="https://arxiv.org/pdf/2405.06263">
-                <papertitle> Learning Latent Dynamic Robust Representations for World Models </papertitle></a>
-                <br>
-                Ruixiang Sun, Hongyu Zang, Xin Li, <a><i>Riashat Islam</i></a>
-                <br>
-              <a href="https://arxiv.org/pdf/2405.06263">ICML 2024</a>  
-            </div>
-            <div id="hybrid-rssm" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('pclast').style.display = 'block';"
-                onmouseout="document.getElementById('pclast').style.display='none';">
-              <a href="https://arxiv.org/abs/2311.03534">
-                <papertitle> PcLast : Discovering Plannable Continuous Latent States </papertitle></a>
-                <br>
-                Anurag Koul, Shivakanth Sujit, Shaoru Chen, Ben Evans, Lili Wu, <a><i>Riashat Islam</i></a>, Raihan Seraj, Yonathan Efroni, Miroslav Dudik, John Langford, Alex Lamb 
-                <br>
-              <a href="https://arxiv.org">ICML 2024</a>  
-            </div>
-            <div id="pclast" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('pomdp').style.display = 'block';"
-                onmouseout="document.getElementById('pomdp').style.display='none';">
-              <a href="https://arxiv.org/pdf/2404.14552">
-                <papertitle> Generalizing Inverse Kinematics to Discover Agent-Centric Dynamics for Finite-Memory POMDPs </papertitle></a>
-                <br>
-                Lili Wu, Ben Evans, <a><i>Riashat Islam</i></a>, Raihan Seraj, Yonathan Efroni, Alex Lamb 
-                <br>
-              <a href="https://arxiv.org/pdf/2404.14552">ICLR 2024</a>  
-            </div>
-            <div id="pomdp" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('eqamx').style.display = 'block';"
-                onmouseout="document.getElementById('eqamx').style.display='none';">
-              <a href="...">
-                <papertitle> EQA-MX: Embodied Question Answering using Multimodal Expression </papertitle></a>
-                <br>
-              Md Mofijul Islam, Alexi Gladstone, <a><i>Riashat Islam</i></a>, Tariq Iqbal
-          <br>
-              <a href="...  "> ICLR 2024 (SPOTLIGHT!) </a>  
-            </div>
-            <div id="eqamx" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('infomask').style.display = 'block';"
-                onmouseout="document.getElementById('infomask').style.display='none';">
-              <a href="https://arxiv.org/pdf/2303.06121">
-                <papertitle> Ignorance is Bliss: Robust Control via Information Gating </papertitle></a>
-                <br>
-                Manan Tomar, <a><i>Riashat Islam</i></a>, Matthew E. Taylor, Sergey Levine, Philip Bachman 
-                <br>
-              <a href="https://arxiv.org/pdf/2303.06121.pdf">NeurIPS 2023</a>  
-            </div>
-            <div id="infomask" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('bisim').style.display = 'block';"
-                onmouseout="document.getElementById('bisim').style.display='none';">
-              <a href="https://arxiv.org/pdf/2310.17139.pdf">
-                <papertitle> Understanding and Addressing the Pitfalls of Bisimulation-based Representations in Offline Reinforcement Learning </papertitle></a>
-                <br>
-                Hongyu Zang, Xin Li, Leiji Zhang, Yang Liu, Baigui Sun, <a><i>Riashat Islam</i></a>, Remi Tachet des Combes, Romain Laroche
-                <br>
-              <a href="https://arxiv.org/pdf/2310.17139.pdf">NeurIPS 2023</a>  
-            </div>
-            <div id="bisim" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('acro').style.display = 'block';"
-                onmouseout="document.getElementById('acro').style.display='none';">
-              <a href="https://arxiv.org/abs/2211.00164">
-                <papertitle> Agent-Controller Representations : Principled Offline RL with Rich Exogenous Information </papertitle></a>
-                <br>
-              <a><i>Riashat Islam</i></a>, Manan Tomar, Alex Lamb, Yonathan Efroni, Hongyu Zang, Aniket Didolkar, Dipendra Misra, Xin Li, Harm Van Seijen, Remi Tachet Des Combes, John Langford.
- 			    <br>
-              <a href="https://arxiv.org/abs/2211.00164">ICML 2023</a>  
-            </div>
-            <div id="acro" style="display:none">  
-              </div><br>
-            
-            <div onmouseover="document.getElementById('dgrl').style.display = 'block';"
-                onmouseout="document.getElementById('dgrl').style.display='none';">
-              <a href="https://arxiv.org/abs/2211.00247">
-                <papertitle> Discrete Factorial Representations as an Abstraction for Goal Conditioned RL </papertitle></a>
-                <br>
-              <a><i>Riashat Islam</i></a>, Hongyu Zang, Anirudh Goyal, Alex Lamb, Kenji Kawaguchi, Xin Li, Romain Laroche, Yoshua Bengio, Remi Tachet Des Combes
- 			    <br>
-              <a href="https://arxiv.org/abs/2211.00247">NeurIPS 2022</a>  
-            </div>
-            <div id="dgrl" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('acstate').style.display = 'block';"
-                onmouseout="document.getElementById('acstate').style.display='none';">
-              <a href="https://arxiv.org/pdf/2207.08229.pdf">
-                <papertitle> Guaranteed Discovery of Controllable Latent States with Multi-Step Inverse Models </papertitle></a>
-                <br>
-              Alex Lamb*, <a><i>Riashat Islam*</i></a>, Yonathan Efroni, Aniket Didolkar, Dipendra Misra, Dylan Foster, Lekan Molu, Rajan Chari, Akshay Krishnamurthy, John Langford.
- 			    <br>
-              <a href="https://arxiv.org/pdf/2207.08229.pdf">TMLR 2023</a>  
-            </div>
-            <div id="acstate" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('repdib').style.display = 'block';"
-                onmouseout="document.getElementById('repdib').style.display='none';">
-              <a href="https://arxiv.org/pdf/2212.13835">
-                <papertitle> Representation Learning in Deep RL with Discrete Information Bottleneck </papertitle></a>
-                <br>
-              <a><i>Riashat Islam</i></a>, Hongyu Zang, Manan Tomar, Aniket Didolkar, Md Mofijul Islam, Anirudh Goyal, Samin Yeasar Arnob, Xin Li, Tariq Iqbal, Nicolas Hess, Alex Lamb. 
- 			    <br>
-              <a href="https://arxiv.org/pdf/2212.13835f">AISTATS 2023</a>  
-            </div>
-            <div id="repdib" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('bpr').style.display = 'block';"
-                onmouseout="document.getElementById('bpr').style.display='none';">
-              <a href="https://arxiv.org/pdf/2211.00863.pdf">
-                <papertitle> Behavior Prior Representation Learning for Offline Reinforcement Learning </papertitle></a>
-                <br>
-              Hongyu Zang, Xin Li, Jie Yu, Chen Lu, <a><i>Riashat Islam</i></a>, Remi Tachet Des Combes, Romain Laroche.
- 			    <br>
-              <a href="https://arxiv.org/pdf/2211.00863.pdf">ICLR 2023</a>  
-            </div>
-            <div id="bpr" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('ovar').style.display = 'block';"
-                onmouseout="document.getElementById('ovar').style.display='none';">
-              <a href="https://openreview.net/forum?id=P3WG6p6Jnb">
-                <papertitle> Offline Policy Optimization with Variance Regularization </papertitle></a>
-                <br>
-              <a><i>Riashat Islam*</i></a>, Samarth Sinha*, Homanga Bharadhwaj, Samin Yeasar Arnob, Zhuoran Yang, Zhaoran Wang, Animesh Garg, Lihong Li, Doina Precup
- 			    <br>
-              <a href="https://arxiv.org/pdf/2212.14405.pdf">Arxiv 2022</a>, <a href="https://arxiv.org/pdf/2212.14405.pdf">The Optimization Foundations for Reinforcement Learning workshop, NeurIPS 2021</a>
-              
-            </div>
-            <div id="ovar" style="display:none">  
-              </div><br>
-
-            <div onmouseover="document.getElementById('complexity').style.display = 'block';"
-                onmouseout="document.getElementById('complexity').style.display='none';">
-              <a href="https://arxiv.org/abs/2112.15578">
-                <papertitle> Importance of Empirical Sample Complexity Analysis for Offline Reinforcement Learning </papertitle></a>
-                <br>
-                Samin Yeasar Arnob, <a><i>Riashat Islam</i></a>, Doina Precup
- 			    <br>
- 			    <a href="https://arxiv.org/abs/2112.15578">Offline RL Workshop, NeurIPS 2021</a>  
-              
-            </div>
-            <div id="complexity" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('stateentropy').style.display = 'block';"
-                onmouseout="document.getElementById('stateentropy').style.display='none';">
-              <a href="https://arxiv.org/pdf/1912.05104.pdf">
-                <papertitle> Entropy Regularization with Discounted Future State Distributions in Policy Gradient </papertitle></a>
-                <br>
-              <a><i>Riashat Islam</i></a>, Raihan Seraj, Pierre-Luc Bacon, Doina Precup. 
- 			    <br>
-              <a href="https://arxiv.org/pdf/1912.05104.pdf">Arxiv 2020</a>, <a href="https://arxiv.org/pdf/1912.05104.pdf">The Optimization Foundations for Reinforcement Learning workshop, NeurIPS 2019</a>
-              
-            </div>
-            <div id="stateentropy" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('marginalizedstateentropy').style.display = 'block';"
-                onmouseout="document.getElementById('marginalizedstateentropy').style.display='none';">
-              <a href="https://arxiv.org/abs/1912.05128">
-                <papertitle> Marginalized State Distribution Entropy Regularization in Policy Optimization </papertitle></a>
-                <br>
-              <a><i>Riashat Islam</i></a>, Zafarali Ahmed, Doina Precup. 
- 			    <br>
-              <a href="https://arxiv.org/abs/1912.05128">Arxiv 2020</a>, <a href="https://arxiv.org/abs/1912.05128"> Deep Reinforcement Learning workshop, NeurIPS 2019</a>
-            </div>
-            <div id="marginalizedstateentropy" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('infobot').style.display = 'block';"
-                onmouseout="document.getElementById('infobot').style.display='none';">
-              <a href="https://arxiv.org/abs/1901.10902">
-                <papertitle> InfoBot: Transfer and Exploration via the Information Bottleneck </papertitle></a>
-                <br>
-              Anirudh Goyal, <a><i>Riashat Islam</i></a>, DJ Strouse, Zafarali Ahmed, Hugo Larochelle, Matthew Botvinick, Sergey Levine, Yoshua Bengio.
- 			    <br>
-              <a href="https://arxiv.org/abs/1901.10902">ICLR 2019</a>  
-            </div>
-            <div id="infobot" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('deeprl').style.display = 'block';"
-                onmouseout="document.getElementById('deeprl').style.display='none';">
-              <a href="https://lyang36.github.io/icml2021_rltheory/camera_ready/39.pdf">
-                <papertitle> Provably Efficient Exploration in Policy Optimization with Thompson Sampling</papertitle></a>
-                <br>
-              Haque Ishfaq, Zhuoran Yang, Andrei Lupu, Viet Nguyen, Lewis Liu, <a><i>Riashat Islam</i></a>, Zhaoran Wang, Doina Precup
- 			    <br>
-              <a href="https://lyang36.github.io/icml2021_rltheory/camera_ready/39.pdf">Arxiv 2019, ICML RL Theory Workshop 2021</a>  
-            </div>
-            <div id="deeprl" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('repro').style.display = 'block';"
-                onmouseout="document.getElementById('repro').style.display='none';">
-              <a href="https://arxiv.org/pdf/1709.06560.pdf">
-                <papertitle> Deep Reinforcement Learning that Matters </papertitle></a>
-                <br>
-              Peter Henderson*, <a><i>Riashat Islam*</i></a>, Philip Bachman, Joelle Pineau, Doina Precup, David Meger.
- 			    <br>
-              <a href="https://arxiv.org/pdf/1709.06560.pdf">AAAI 2018</a>  
-              <a href="https://www.science.org/content/article/missing-data-hinder-replication-artificial-intelligence-studies">Science Magazine</a>  
-              <a href="https://www.alexirpan.com/2018/02/14/rl-hard.html">Blogpost</a>  
-            </div>
-            <div id="repro" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('deeprl').style.display = 'block';"
-                onmouseout="document.getElementById('deeprl').style.display='none';">
-              <a href="https://arxiv.org/pdf/1811.12560.pdf">
-                <papertitle> An Introduction to Deep Reinforcement Learning </papertitle></a>
-                <br>
-              Vincent Francois-Lavet, Peter Henderson, <a><i>Riashat Islam</i></a>, Marc G. Bellemare, Joelle Pineau
- 			    <br>
-              <a href="https://arxiv.org/pdf/1811.12560.pdf">Journal : Foundations and Trends in Machine Learning, 2018</a>  
-            </div>
-            <div id="deeprl" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('restart').style.display = 'block';"
-                onmouseout="document.getElementById('restart').style.display='none';">
-              <a href="https://arxiv.org/pdf/1811.11298.pdf">
-                <papertitle> Prioritizing Starting States for Reinforcement Learning</papertitle></a>
-                <br>
-              Arash Tavakoli, Vitaly Levdik, <a><i>Riashat Islam</i></a>, Petar Kormushev.
- 			    <br>
-              <a href="https://arxiv.org/pdf/1811.11298.pdf">Arxiv 2019, Deep RL Workshop NeurIPS 2019</a>  
-            </div>
-            <div id="restart" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('doubly_robust').style.display = 'block';"
-                onmouseout="document.getElementById('doubly_robust').style.display='none';">
-              <a href="https://arxiv.org/abs/1912.05109">
-                <papertitle> Doubly Robust Off-Policy Actor-Critic Algorithms for Reinforcement Learning</papertitle></a>
-                <br>
-              <a><i>Riashat Islam</i></a>, Raihan Seraj, Samin Yeasar Arnob, Doina Precup.
- 			    <br>
-              <a href="https://arxiv.org/abs/1912.05109">Arxiv 2018, Safety and Robustness in RL Workshop, NeurIPS 2019</a>  
-            </div>
-            <div id="doubly_robust" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('discrete').style.display = 'block';"
-                onmouseout="document.getElementById('discrete').style.display='none';">
-              <a href="https://joeybose.github.io/assets/my_assets/Gradient_estimator.pdf">
-                <papertitle> Discrete off-policy policy gradient using continuous relaxations </papertitle></a>
-                <br>
-              Andre Cianflone, Zafarali Ahmed, <a><i>Riashat Islam</i></a>, Avishek Joey Bose, William L. Hamilton
- 			    <br>
-              <a href="https://joeybose.github.io/assets/my_assets/Gradient_estimator.pdf">RLDM 2019</a>  
-            </div>
-            <div id="discrete" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('repro_pipeline').style.display = 'block';"
-                onmouseout="document.getElementById('repro_pipeline').style.display='none';">
-              <a href="https://openreview.net/pdf?id=HJgAmITcgm">
-                <papertitle> Re-Evaluate : Reproducibility in Evaluating Reinforcement Learning Algorithms </papertitle></a>
-                <br>
-              Khimya Khetarpal, Zafarali Ahmed, Andre Cianflone, <a><i>Riashat Islam</i></a>, Joelle Pineau
- 			    <br>
-              <a href="https://openreview.net/pdf?id=HJgAmITcgm">Reproducibility in ML Workshop, ICML 2018</a>  
-            </div>
-            <div id="repro_pipeline" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('vfunc_transfer').style.display = 'block';"
-                onmouseout="document.getElementById('vfunc_transfer').style.display='none';">
-              <a href="https://arxiv.org/abs/1906.03574">
-                <papertitle>  Transfer Learning by Modelling Distribution over Policies </papertitle></a>
-                <br>
-              Disha Shrivastava, Eeshan Gunesh Dhekane, <a><i>Riashat Islam</i></a>
- 			    <br>
-              <a href="https://arxiv.org/abs/1906.03574">Arxiv 2018, Multi-Task and Lifelong Reinforcement Learning, ICML 2019</a>  
-            </div>
-            <div id="vfunc_transfer" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('vfunc').style.display = 'block';"
-                onmouseout="document.getElementById('vfunc').style.display='none';">
-              <a href="https://arxiv.org/pdf/1807.04106.pdf">
-                <papertitle> VFunc : A Deep Generative Model for Functions </papertitle></a>
-                <br>
-              Philip Bachman, <a><i>Riashat Islam</i></a>, Alessandro Sordoni, Zafarali Ahmed.
- 			    <br>
-              <a href="https://arxiv.org/pdf/1807.04106.pdf">Arxiv 2018, ICML Workshop on Prediction and Generative Modelling in RL</a>  
-            </div>
-            <div id="vfunc" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('vse').style.display = 'block';"
-                onmouseout="document.getElementById('vse').style.display='none';">
-              <a href="https://tarl2019.github.io/assets/papers/klissarov2019variational.pdf">
-                <papertitle> Variational State Encoding as Intrinsic Motivation in Reinforcement Learning </papertitle></a>
-                <br>
-              Martin Klissarov*, <a><i>Riashat Islam*</i></a>, Khimya Khetarpal, Doina Precup
- 			    <br>
-              <a href="https://tarl2019.github.io/assets/papers/klissarov2019variational.pdf">Arxiv 2018, Task Agnostic RL Workshop, ICLR 2019</a>  
-            </div>
-            <div id="vse" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('off_policy').style.display = 'block';"
-                onmouseout="document.getElementById('off_policy').style.display='none';">
-              <a href="https://arxiv.org/pdf/1911.06970.pdf">
-                <papertitle> Off-Policy Policy Gradient Algorithms by Constraining the State Distribution Shift </papertitle></a>
-                <br>
-              <a><i>Riashat Islam*</i></a>, Deepak Sharma, Komal Teru, Joelle Pineau. 
- 			    <br>
-              <a href="https://arxiv.org/pdf/1911.06970.pdf">Arxiv 2018</a>  
-            </div>
-            <div id="off_policy" style="display:none">  
-              </div><br>
-
-
-
-            <div onmouseover="document.getElementById('hypernets').style.display = 'block';"
-                onmouseout="document.getElementById('hypernets').style.display='none';">
-              <a href="https://arxiv.org/pdf/1710.04759.pdf">
-                <papertitle> Bayesian Hypernetworks </papertitle></a>
-                <br>
-              David Krueger*, Chin-Wei Huang*, <a><i>Riashat Islam*</i></a>, Ryan Turner, Aaron Courville. 
- 			    <br>
-              <a href="https://arxiv.org/pdf/1710.04759.pdf">Arxiv 2018</a>  
-            </div>
-            <div id="hypernets" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('active').style.display = 'block';"
-                onmouseout="document.getElementById('active').style.display='none';">
-              <a href="https://arxiv.org/pdf/1703.02910.pdf">
-                <papertitle> Deep Bayesian Active Learning with Image Data</papertitle></a>
-                <br>
-              Yarin Gal*, <a><i>Riashat Islam*</i></a>, Zoubin Ghahramani.
- 			    <br>
-              <a href="https://riashatislam.files.wordpress.com/2017/10/2017_icml_talk.pdf">ICML 2017</a>  
-            </div>
-            <div id="active" style="display:none">  
-              </div><br>
-
-
-
-
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <heading>Research Interests</heading>
-        <tbody><tr><td>
-            <ul>
-              <li> Deep Reinforcement Learning  </li>
-              <li> Latent State Discovery (State Abstraction and Representation Learning) and Exploration </li>
-              <li> Offline Reinforcement Learning </li>       
-              <li> Optimization Methods for RL</li>
-              <li> Probabilistic Models and Bayesian Deep Learning </li>
-              <li> Deep Generative Models, Approximate and Bayesian Inference </li>  
-              <li> Active Learning </li>   
-              </div>
-            </ul>
-        </td></tr>
-     </tbody></table>
-
-<!--           <heading2><i>Preprints</i></heading2><br><br>
-            <div onmouseover="document.getElementById('tims').style.display = 'block';"
-                onmouseout="document.getElementById('tims').style.display='none';">
-              <a href="https://arxiv.org/abs/2103.00336">
-                <papertitle> Transformers with Competitive Ensembles of Independent Mechanisms </papertitle></a><br>
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao"> Alex Lamb </a>,
-              <a href=""> Di He</a>,
-              <i>Anirudh Goyal</i>,
-              <a href=""> Guolin Ke</a>,
-              <a href=""> Chien-Feng Liao</a>,
-              <a href=""> Mirco Ravanelli</a>,
-              <a href="https://arxiv.org/abs/2103.00336">arXiv</a>  
-            </div>
-            <div id="tims" style="display:none">  
-              </div><br>
-
-            <div onmouseover="document.getElementById('workspace').style.display = 'block';"
-                onmouseout="document.getElementById('workspace').style.display='none';">
-              <a href="https://arxiv.org/abs/2103.01197">
-                <papertitle>Coordination Among Neural Modules Through a Shared Global Workspace </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.aniketdidolkar.in"> Aniket Didolkar</a>,
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao"> Alex Lamb </a>,
-              <a href="https://scholar.google.com/citations?user=1bXieIsAAAAJ&hl=en&oi=ao"> Kartikeya Badola </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://scholar.google.com/citations?user=iH9DuY0AAAAJ&hl=en&oi=ao"> Nasim Rahaman </a>,
-              <a href="https://scholar.google.com/citations?hl=en&user=oD1W8a4AAAAJ"> Jonathan Binas </a>,
-              <a href="https://scholar.google.ca/citations?hl=en&user=f31mvPsAAAAJ"> Charles Blundell </a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <a href="https://arxiv.org/abs/2103.01197">arXiv</a>  / <a href="https://github.com/anirudh9119/shared_workspace">code</a>
-            </div>
-            <div id="workspace" style="display:none">  
-              </div><br>
-             
-            <div onmouseover="document.getElementById('active_interventions').style.display = 'block';"
-                onmouseout="document.getElementById('active_interventions').style.display='none';">
-              <a href="https://arxiv.org/abs/2109.02429">
-                <papertitle> Learning Neural Causal Models from Active Interventions </papertitle></a><br>
-              <a href=""> Nino Scherrer </a>,
-              <a href="http://mila.umontreal.ca/en/person/olexa-bilaniuk/?lang=en"> Olexa Bilaniuk </a>,
-              <a href=""> Yashas Annadani </a>,
-              <i>Anirudh Goyal</i>,
-              <a href=""> Patrick Schwab </a>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="http://www.is.mpg.de/~sbauer"> Stefan Bauer </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://arxiv.org/abs/2109.02429">arXiv</a>  
-            </div>
-            <div id="active_interventions" style="display:none">  
-              </div><br>
-  
-             <div onmouseover="document.getElementById('nims').style.display = 'block';"
-                onmouseout="document.getElementById('nims').style.display='none';">
-              <a href="https://arxiv.org/abs/1910.01075">
-                <papertitle> Learning Neural Causal Models from unknown Interventions </papertitle></a><br>
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="http://mila.umontreal.ca/en/person/olexa-bilaniuk/?lang=en"> Olexa Bilaniuk </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://www.is.mpg.de/~sbauer"> Stefan Bauer </a>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a>,
-              <a href="http://info.usherbrooke.ca/hlarochelle/index_en.html"> Hugo Larochelle</a>,
-              <a href="https://sites.google.com/view/christopher-pal"> Chris Pal </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <a href="https://arxiv.org/abs/1910.01075">arXiv</a>  / <a href="https://github.com/nke001/causal_learning_unknown_interventions">code</a>
-            </div>
-            <div id="nims" style="display:none">  
-              </div><br>
-            
-            <div onmouseover="document.getElementById('megs').style.display = 'block';"
-                onmouseout="document.getElementById('megs').style.display='none';">
-              <a href="https://arxiv.org/abs/1901.08508">
-                <papertitle> Maximum Entropy Generators for Energy-Based Models </papertitle></a><br>
-              <a href="https://ritheshkumar.com/"> Rithesh Kumar </a>,
-              <a href="https://scholar.google.co.uk/citations?user=O7MZStwAAAAJ&hl=en&oi=ao">  Sherjil Ozair </a>,
-              <i>Anirudh Goyal</i>,
-	      <a href="https://mila.quebec/en/person/aaron-courville/"> Aaron Courville </a>, 
-	      <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <a href="https://arxiv.org/abs/1901.08508">arXiv</a> /  <a href="https://github.com/ritheshkumar95/energy_based_generative_models"> code</a>  
-            </div>
-            <div id="megs" style="display:none">  
-              </div><br>
-            
-             <div onmouseover="document.getElementById('maxent').style.display = 'block';"
-                onmouseout="document.getElementById('maxent').style.display='none';">
-              <a href="https://arxiv.org/abs/2006.16524">
-                <papertitle> Maximum Entropy Models for Fast Adaptation  </papertitle></a><br>
-              <a href="http://www.cs.toronto.edu/~sinhasam/"> Samarth Sinha </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://info.usherbrooke.ca/hlarochelle/index_en.html"> Hugo Larochelle</a>,
-              <a href="https://animesh.garg.tech/"> Animesh Garg </a> <br>
-              <a href="https://arxiv.org/abs/2006.16524">arXiv</a> 
-            </div>
-            <div id="maxent" style="display:none">  
-              </div><br>
-          
-          <heading2><i>2021</i></heading2><br><br>
-            <div onmouseover="document.getElementById('systematic').style.display = 'block';"
-                onmouseout="document.getElementById('systematic').style.display='none';">
-              <a href="https://arxiv.org/abs/2107.00848">
-                <papertitle> Systematic Evaluation of Causal Discovery in Visual Model Based Reinforcement Learning </papertitle></a><br>
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://www.aniketdidolkar.in/"> Aniket Didolkar </a>,
-              <a href="https://sarthmit.github.io/"> Sarthak Mittal </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.com/citations?user=O-oICE8AAAAJ&hl=en&oi=ao"> Stefan Bauer </a>,
-              <a href="https://scholar.google.com/citations?hl=en&user=UGlyhFMAAAAJ"> Danilo Rezende </a> <br>
-              <a href="https://scholar.google.com/citations?user=1ScWJOoAAAAJ&hl=en&oi=sra"> Christopher Pal </a>,
-              <a href="https://home.cs.colorado.edu/~mozer/index.php">Michael C. Mozer</a> <br>
-              <em> Neural Information Processing Systems (NeurIPS, Dataset Track)  </em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2107.00848">arXiv</a> /  <a href="https://github.com/anirudh9119/neural_production_systems">code</a> 
-            </div>
-            <div id="systematic" style="display:none">  
-              </div><br>
-            
-            <div onmouseover="document.getElementById('nps').style.display = 'block';"
-                onmouseout="document.getElementById('nps').style.display='none';">
-              <a href="https://arxiv.org/abs/2103.01937">
-                <papertitle> Neural Production Systems </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.aniketdidolkar.in/"> Aniket Didolkar </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://scholar.google.ca/citations?hl=en&user=f31mvPsAAAAJ"> Charles Blundell </a>,
-              <a href="https://scholar.google.ca/citations?user=SUbqiqwAAAAJ&hl=en"> Philippe Beaudoin </a>,
-              <a href="https://scholar.google.ca/citations?hl=en&user=79k7bGEAAAAJ"> Nicolas Heess </a>,
-              <a href="https://home.cs.colorado.edu/~mozer/index.php">Michael C. Mozer</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> Neural Information Processing Systems (NeurIPS) </em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2103.01937">arXiv</a> /  <a href="https://github.com/anirudh9119/neural_production_systems">code</a> 
-            </div>
-            <div id="nps" style="display:none">  
-              </div><br>
-            
-            <div onmouseover="document.getElementById('dvnc').style.display = 'block';"
-                onmouseout="document.getElementById('dvnc').style.display='none';">
-              <a href="https://arxiv.org/abs/2107.02367">
-                <papertitle> Discrete-Valued Neural Communication </papertitle></a><br>
-              <a href="https://scholar.google.com/citations?user=kGSzBpMAAAAJ&hl=en&oi=ao"> Dianbo Liu </a>,
-              <a href="https://scholar.google.com/citations?user=aLl3rYoAAAAJ&hl=en&oi=ao">Kenji Kawaguchi</a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://linclab.mila.quebec/team/chen"> Chen Sun</a>,
-              <a href="https://home.cs.colorado.edu/~mozer/index.php">Michael C. Mozer</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> Neural Information Processing Systems (NeurIPS) </em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2103.01937">arXiv</a> 
-            </div>
-            <div id="dvnc" style="display:none">  
-              </div><br>
-         
-            <div onmouseover="document.getElementById('causalworld').style.display = 'block';"
-                onmouseout="document.getElementById('causalworld').style.display='none';">
-              <a href="https://arxiv.org/abs/2010.04296">
-                <papertitle>CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning  </papertitle></a><br>
-              <a href="https://scholar.google.com/citations?user=CczTpzgAAAAJ&hl=en&oi=ao"> Ossama Ahmed </a>,
-              <a href="https://scholar.google.com/citations?user=CczTpzgAAAAJ&hl=en&oi=ao"> Frederik Träuble </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.com/citations?user=K1GoYW8AAAAJ&hl=en&oi=ao"> Alexander Neitz </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a>,
-              <a href="https://scholar.google.de/citations?user=7EWrVYIAAAAJ&hl=en">  Manuel Wüthrich </a>,
-              <a href="https://scholar.google.com/citations?user=O-oICE8AAAAJ&hl=de"> Stefan Bauer </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2010.04296">arXiv</a> /  <a href="https://github.com/rr-learning/CausalWorld">code</a> 
-            </div>
-            <div id="causalworld" style="display:none">  
-              </div><br>
-
-            <div onmouseover="document.getElementById('meta-rims').style.display = 'block';"
-                onmouseout="document.getElementById('meta-rims').style.display='none';">
-              <a href="https://arxiv.org/abs/2105.08710">
-                <papertitle>Fast and Slow Learning of Recurrent Independent Mechanisms </papertitle></a><br>
-              <a href="https://openreview.net/profile?id=~Kanika_Madan3"> Kanika Madan </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2105.08710">arXiv</a> 
-            </div>
-            <div id="meta-rims" style="display:none">  
-              </div><br>
-
-
-            <div onmouseover="document.getElementById('rims').style.display = 'block';"
-                onmouseout="document.getElementById('rims').style.display='none';">
-              <a href="https://arxiv.org/abs/1909.10893">
-                <papertitle> Recurrent Independent Mechanisms </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao">Alex Lamb</a>,
-              <a href="https://scholar.google.com/citations?user=Rkr2uT8AAAAJ&hl=en/"> Jordan Hoffmann </a>,
-              <a href="https://scholar.google.co.uk/citations?hl=en&user=ixp-vqMAAAAJ"> Shagun Sodhani </a>, 
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2021  <br>
-              <a href="https://arxiv.org/abs/1909.10893">arXiv</a>  / <a href="https://github.com/anirudh9119/RIMs">code</a>
-            </div>
-            <div id="rims" style="display:none">  
-              </div><br>
-            
-             
-            <div onmouseover="document.getElementById('scoff').style.display = 'block';"
-                onmouseout="document.getElementById('scoff').style.display='none';">
-              <a href="https://arxiv.org/abs/2006.16225">
-                <papertitle> Object Files and Schemata: Factorizing Declarative and Procedural Knowledge in Dynamical Systems </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao">Alex Lamb</a>,
-              <a href="https://scholar.google.com/citations?user=Rkr2uT8AAAAJ&hl=en/"> Phanideep Gampa </a>,
-              <a href="https://ca.linkedin.com/in/beaudoin">Philippe Beaudoin</a>,
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a>,
-              <a href="http://www.gatsby.ucl.ac.uk/~ucgtcbl/"> Charles Blundell </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>, 
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2006.16225">arXiv</a>  
-            </div>
-            <div id="scoff" style="display:none">  
-              </div><br>
-
-            
-            <div onmouseover="document.getElementById('topo_rims').style.display = 'block';"
-                onmouseout="document.getElementById('topo_rims').style.display='none';">
-              <a href="https://arxiv.org/abs/2007.06533">
-                <papertitle> S2RMs: Spatially Structured Recurrent Modules </papertitle></a><br>
-              <a href="https://scholar.google.co.uk/citations?hl=en&user=iH9DuY0AAAAJ&view_op=list_works&sortby=pubdate"> Nasim Rahaman </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://scholar.google.com/citations?user=KJTsSAQAAAAJ&hl=en"> Muhammad Waleed Gondal </a>,
-              <a href="http://scholar.google.de/citations?user=7EWrVYIAAAAJ&hl=en"> Manuel Wüthrich</a>,
-              <a href="https://www.is.mpg.de/~sbauer"> Stefan Bauer </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a><br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2007.06533">arXiv</a>  
-            </div>
-            <div id="topo_rims" style="display:none">  
-              </div><br>
-
-            <div onmouseover="document.getElementById('nfm').style.display = 'block';"
-                onmouseout="document.getElementById('nfm').style.display='none';">
-              <a href="https://arxiv.org/abs/2010.08012">
-                <papertitle> Neural Function Modules with Sparse Arguments: A Dynamic Approach to Integrating Information across Layers  </papertitle></a><br>
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao">Alex Lamb</a>,
-              <i>Anirudh Goyal</i>,
-              <a href="">  Agnieszka Słowik </a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a> <br>
-              <a href="https://ca.linkedin.com/in/beaudoin">Philippe Beaudoin</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> International Conference on Artificial Intelligence and Statistics (AISTATS) </em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2010.08012">arXiv</a>  
-            </div>
-            <div id="iayn" style="display:none">  
-              </div><br>
-            
-            <div onmouseover="document.getElementById('iayn').style.display = 'block';"
-                onmouseout="document.getElementById('iayn').style.display='none';">
-              <a href="https://arxiv.org/abs/2006.07886">
-                <papertitle> Is Independence all you need? On the Generalization of Representations Learned from Correlated Data  </papertitle></a><br>
-              <a href="https://ei.is.tuebingen.mpg.de/person/ftraeuble"> Frederik Träuble </a>,
-              <a href="https://www.cs.toronto.edu/~creager/"> Elliot Creager </a>,
-              <a href="https://www.is.mpg.de/~nkilbertus"> Niki Kilbertus </a>, 
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.com/citations?hl=en&user=wQanfTIAAAAJ&view_op=list_works&sortby=pubdate"> Francesco Locatello </a>,
-              <a href="https://www.is.mpg.de/~bs"> Bernhard Schölkopf</a>,
-              <a href="http://www.is.mpg.de/~sbauer"> Stefan Bauer </a> <br>
-              <em>International Conference on Machine Learning (ICML)</em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2006.07886">arXiv</a>  
-            </div>
-            <div id="iayn" style="display:none">  
-              </div><br>
-
-             
-            
-             <div onmouseover="document.getElementById('dibs').style.display = 'block';"
-                onmouseout="document.getElementById('dibs').style.display='none';">
-              <a href="https://arxiv.org/abs/2003.04514">
-                <papertitle> DIBS: Diversity inducing Information Bottleneck in Model Ensembles  </papertitle></a><br>
-              <a href="http://www.cs.toronto.edu/~sinhasam/"> Samarth Sinha </a>,
-              <a href="https://homangab.github.io/"> Homanga Bharadhwaj </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://info.usherbrooke.ca/hlarochelle/index_en.html"> Hugo Larochelle</a>,
-              <a href="https://animesh.garg.tech/"> Animesh Garg </a>,
-	      <a href="http://www.cs.toronto.edu/~florian/"> Florian Shkurti </a> <br> 
-              <em> AAAI Conference on Artificial Intelligence (AAAI) </em>, 2021  <br>
-              <a href="https://arxiv.org/abs/2003.04514">arXiv</a> 
-            </div>
-            <div id="dibs" style="display:none">  
-              </div><br>
-
-     <heading2><i>2020</i></heading2><br><br>
-             <div onmouseover="document.getElementById('tradeoffs').style.display = 'block';"
-                onmouseout="document.getElementById('tradeoffs').style.display='none';">
-              <a href="">
-              <papertitle> Untangling tradeoffs between recurrence and self-attention in neural networks  </papertitle></a><br>              
-              <a href="http://scholar.google.ca/citations?user=GcJkks8AAAAJ&hl=en"> Giancarlo Kerg </a>,
-              <a href="http://scholar.google.com/citations?user=7q8cVU0AAAAJ&hl=en"> Bhargav Kanuparthi </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.linkedin.com/in/kyle-goyette-b28a5396"> Kyle Goyette</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>, 
-              <a href="http://dms.umontreal.ca/~lajoie/"> Guillaume Lajoie </a> <br>
-              <em>  Neural Information Processing Systems (NeurIPS) </em>, 2020  <br>
-              <a href="https://arxiv.org/abs/2006.09471"> arXiv </a> 
-            </div>
-            <div id="tradeoffs" style="display:none">  
-              </div><br>
-            
-            <div onmouseover="document.getElementById('topk_neurips').style.display = 'block';"
-                onmouseout="document.getElementById('topk_neurips').style.display='none';">
-              <a href="https://arxiv.org/abs/2002.06224">
-                <papertitle> Top-K Training of GANs: Improving Generators by Making Critics Less Critical </papertitle></a><br>
-              <a href="http://www.cs.toronto.edu/~sinhasam/"> Samarth Sinha </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://colinraffel.com/"> Colin Raffel </a>,
-              <a href="https://www.augustusodena.com/">  Augustus Odena </a> <br>
-              <em> Neural Information Processing Systems (NeurIPS)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/2002.06224">arXiv </a> 
-            </div>            
-            <div id="topk_neurips" style="display:none">  
-              </div><br>
-
-             <div onmouseover="document.getElementById('brims').style.display = 'block';"
-                onmouseout="document.getElementById('brims').style.display='none';">
-              <a href="">
-              <papertitle> Learning to Combine Top-Down and Bottom-Up Signals in Recurrent Neural Networks with Attention over Modules </papertitle></a><br>              
-              <a href="https://sarthmit.github.io/"> Sarthak Mittal </a>,
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao">Alex Lamb</a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.doc.ic.ac.uk/~mpsha/"> Murray Shanahan </a>,
-              <a href="http://dms.umontreal.ca/~lajoie/"> Guillaume Lajoie </a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em>International Conference on Machine Learning (ICML)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/2006.16981"> arXiv </a> 
-            </div>
-            <div id="brims" style="display:none">  
-            </div><br>
-             
-            <div onmouseover="document.getElementById('small-gan').style.display = 'block';"
-                onmouseout="document.getElementById('small-gan').style.display='none';">
-              <a href="https://arxiv.org/abs/1910.13540">
-              <papertitle> Small-GAN: Speeding Up GAN Training Using Core-sets  </papertitle></a><br>
-              <a href="http://www.cs.toronto.edu/~sinhasam/"> Samarth Sinha </a>,
-              <a href="https://sites.google.com/view/hanzhang"> Han Zhang </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="http://info.usherbrooke.ca/hlarochelle/index_en.html"> Hugo Larochelle</a>,
-              <a href="https://www.augustusodena.com/">  Augustus Odena </a> <br>
-              <em>International Conference on Machine Learning (ICML)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/1910.13540">arXiv</a> 
-            </div>
-            <div id="small-gan" style="display:none">  
-              </div><br>
-            
-             <div onmouseover="document.getElementById('icp').style.display = 'block';"
-                onmouseout="document.getElementById('icp').style.display='none';">
-              <a href="https://arxiv.org/abs/1906.10667">
-              <papertitle> Reinforcement Learning with Competitive Ensembles of Information-Constrained Primitives  </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Shagun Sodhani</a>,
-              <a href="http://www.jbinas.com/"> Jonathan Binas  </a>,
-              <a href="https://xbpeng.github.io/"> Xue Bin (Jason) Peng </a>,
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> </br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/1906.10667">arXiv</a> 
-            </div>
-            <div id="icp" style="display:none">  
-              </div><br>
-             
-
-             <div onmouseover="document.getElementById('vbb').style.display = 'block';"
-                onmouseout="document.getElementById('vbb').style.display='none';">
-              <a href="https://arxiv.org/abs/2004.11935">
-              <papertitle> The Variational Bandwidth Bottleneck: Stochastic Evaluation on an Information Budget </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="http://scholar.google.com/citations?user=eM916YMAAAAJ&hl=en"> Matthew Botvinick </a>, 
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a> </br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/2004.11935">arXiv</a> 
-            </div>
-            <div id="vbb" style="display:none">  
-              </div><br>
-             
-             <div onmouseover="document.getElementById('meta-transfer').style.display = 'block';"
-                onmouseout="document.getElementById('meta-transfer').style.display='none';">
-              <a href="https://arxiv.org/abs/1901.10912">
-              <papertitle> A Meta-Transfer Objective for Learning to Disentangle Causal Mechanisms </papertitle></a><br>
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="https://mila.quebec/en/person/tristan-deleu/"> Tristan Deleu </a>,
-              <a href="https://scholar.google.co.uk/citations?user=iH9DuY0AAAAJ&hl=en&oi=ao"> Nasim Rahaman </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://mila.quebec/en/person/sebastien-lachapelle/"> Sebastien Lachapelle </a>,
-              <a href="http://mila.umontreal.ca/en/person/olexa-bilaniuk/?lang=en"> Olexa Bilaniuk </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://sites.google.com/view/christopher-pal"> Chris Pal </a> </br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/1901.10912">arXiv</a> /  <a href="https://github.com/ec6dde01667145e58de60f864e05a4/CausalOptimizationAnon">code</a> 
-            </div>
-            <div id="meta-transfer" style="display:none">  
-              </div><br>
-
-             <div onmouseover="document.getElementById('aot').style.display = 'block';"
-                onmouseout="document.getElementById('aot').style.display='none';">
-              <a href="https://arxiv.org/abs/1901.10912">
-              <papertitle> Learning the Arrow of Time for Problems in Reinforcement Learning  </papertitle></a><br>
-              <a href="https://scholar.google.co.uk/citations?user=iH9DuY0AAAAJ&hl=en&oi=ao"> Nasim Rahaman </a>,
-              <a href="http://scholar.google.de/citations?user=ZLTMBaEAAAAJ&hl=en"> Steffen Wolf </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://dblp.uni-trier.de/pers/hd/r/Remme:Roman"> Roman Remme </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2020  <br>
-              <a href="https://arxiv.org/abs/1901.10912">arXiv</a> /  <a href="https://www.sendspace.com/file/0mx0en">code</a> 
-            </div>
-            <div id="aot" style="display:none">  
-              </div><br>
-
-     <heading2><i>2019 </i></heading2><br><br>
-              <div onmouseover="document.getElementById('state-reification').style.display = 'block';"
-                onmouseout="document.getElementById('state-reification').style.display='none';">
-              <a href="https://arxiv.org/abs/1905.11382">
-              <papertitle> State-Reification Networks: Improving Generalization by Modeling the Distribution of Hidden Representations  </papertitle></a><br>
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao">Alex Lamb</a>,
-              <a href="http://www.jbinas.com/"> Jonathan Binas  </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://www.sandeeplearning.com/"> Sandeep Subramanian </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a> <br>
-              <em>International Conference on Machine Learning (ICML)</em>, 2019  <br>
-              <a href="https://arxiv.org/abs/1905.11382">arXiv</a> / <a href="https://github.com/jbinas">code</a> 
-            </div>
-            <div id="state-reification" style="display:none">  
-              </div><br>
-             
-              <div onmouseover="document.getElementById('long-term-dynamics').style.display = 'block';"
-                onmouseout="document.getElementById('long-term-dynamics').style.display='none';">
-              <a href="https://arxiv.org/abs/1903.01599">
-              <papertitle> Learning Dynamics Model in Reinforcement Learning by Incorporating the Long Term Future  </papertitle></a><br>
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://scholar.google.com/citations?user=aWiMKLsAAAAJ&hl=en"> Amanpreet Singh </a>,
-              <a href="https://scholar.google.co.uk/citations?user=D4LT5xAAAAAJ&hl=en&oi=ao"> Ahmed Touati </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="https://www.cc.gatech.edu/~parikh/"> Devi Parikh </a>, 
-              <a href="https://www.cc.gatech.edu/~dbatra/"> Dhruv Batra </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2019  <br>
-              <a href="https://arxiv.org/abs/1903.01599">arXiv</a> / <a href="https://github.com/facebookresearch/modeling_long_term_future/">code</a> 
-            </div>
-            <div id="long-term-dynamics" style="display:none">  
-              </div><br>
-              
-
-             <div onmouseover="document.getElementById('infobot').style.display = 'block';"
-                onmouseout="document.getElementById('infobot').style.display='none';">
-              <a href="https://arxiv.org/abs/1901.10902">
-              <papertitle> InfoBot: Transfer and Exploration via the Information Bottleneck </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://riashatislam.com/"> Riashat Islam </a>,
-              <a href="http://djstrouse.com/"> Daniel Strouse </a>,
-              <a href="http://www.zafarali.me/"> Zafarali Ahmed </a>,
-              <a href="http://scholar.google.com/citations?user=eM916YMAAAAJ&hl=en"> Matthew Botvinick </a>, 
-              <a href="http://info.usherbrooke.ca/hlarochelle/index_en.html"> Hugo Larochelle</a>,
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2019  <br>
-              <a href="https://arxiv.org/abs/1901.10902"> arXiv</a> 
-            </div>
-            <div id="infobot" style="display:none">  
-            </div><br>
-
-             <div onmouseover="document.getElementById('recall-traces').style.display = 'block';"
-                onmouseout="document.getElementById('recall-traces').style.display='none';">
-              <a href="https://arxiv.org/abs/1804.00379">
-              <papertitle> Recall Traces: Backtracking Models for Efficient Reinforcement Learning </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.co.uk/citations?user=Q6UMpRYAAAAJ&hl=en&oi=ao"> Philemon Brakel </a>,
-              <a href="http://acsweb.ucsd.edu/~wfedus/"> William Fedus </a>,
-              <a href="https://mila.quebec/en/person/soumye-singhal/"> Soumye Singhal </a>,
-              <a href="http://contrastiveconvergence.net/"> Timothy Lillicrap </a>,
-              <a href="http://info.usherbrooke.ca/hlarochelle/index_en.html"> Hugo Larochelle</a>,
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2019  <br>
-              <a href="https://arxiv.org/abs/1804.00379"> arXiv</a> / <a href="https://github.com/anirudh9119/rl_adversarial">code</a> 
-            </div>
-            <div id="recall-traces" style="display:none">  
-            </div><br>
-
-     <heading2><i>2018 </i></heading2><br><br>
-             <div onmouseover="document.getElementById('sab').style.display = 'block';"
-                onmouseout="document.getElementById('sab').style.display='none';">
-              <a href="http://papers.nips.cc/paper/7991-sparse-attentive-backtracking-temporal-credit-assignment-through-reminding">
-              <papertitle> Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding </papertitle></a><br>
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://mila.umontreal.ca/en/person/olexa-bilaniuk/?lang=en"> Olexa Bilaniuk </a>,
-              <a href="http://www.jbinas.com/"> Jonathan Binas  </a>,
-              <a href="https://www.cs.colorado.edu/~mozer/"> Michael C. Mozer</a>,
-              <a href="www.professeurs.polymtl.ca/christopher.pal/">Chris Pal</a>, 
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> Advances in Neural Information Processing Systems (NIPS) </em>, 2018  <br>
-              <a href="http://papers.nips.cc/paper/7991-sparse-attentive-backtracking-temporal-credit-assignment-through-reminding"> arXiv</a> / <a href="https://github.com/nke001/sparse_attentive_backtracking_release">code</a>      
-            </div>
-            <div id="sab" style="display:none">  
-            </div><br>
-
-             <div onmouseover="document.getElementById('geprop').style.display = 'block';"
-                onmouseout="document.getElementById('geprop').style.display='none';">
-              <a href="https://arxiv.org/abs/1808.04873">
-              <papertitle> Generalization of Equilibrium Propagation to Vector Field Dynamics </papertitle></a><br>
-              <a href="http://scholar.google.com.sg/citations?user=GWyeAskAAAAJ&hl=en"> Benjamin Scellier </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="http://www.jbinas.com/"> Jonathan Binas  </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> International Conference on Learning Representations Workshop (ICLR)</em>, 2018  <br>
-              <a href="https://arxiv.org/abs/1808.04873"> arXiv</a> 
-            </div>
-            <div id="geprop" style="display:none">  
-            </div><br>
-
-
-     <heading2><i>2017 </i></heading2><br><br>
-             <div onmouseover="document.getElementById('zforcing').style.display = 'block';"
-                onmouseout="document.getElementById('zforcing').style.display='none';">
-              <a href="https://arxiv.org/abs/1711.05411">
-              <papertitle> Z-Forcing: Training Stochastic Recurrent Networks  </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.microsoft.com/en-us/research/people/alsordon/"> Alessandro Sordoni </a>,
-              <a href="https://www.microsoft.com/en-us/research/people/macote/"> Marc-Alexandre Côté </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> Advances in Neural Information Processing Systems (NIPS) </em>, 2017  <br>
-              <a href="https://arxiv.org/abs/1711.05411"> arXiv</a> / <a href="https://github.com/anirudh9119/zforcing_nips17">code</a>      
-            </div>
-            <div id="zforcing" style="display:none">  
-            </div><br>
-
-             <div onmouseover="document.getElementById('vw').style.display = 'block';"
-                onmouseout="document.getElementById('vw').style.display='none';">
-              <a href="https://arxiv.org/abs/1711.02282">
-              <papertitle> Variational Walkback: Learning a Transition Operator as a Stochastic Recurrent Net </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <a href="https://ganguli-gang.stanford.edu/surya.html"> Surya Ganguli </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> Advances in Neural Information Processing Systems (NIPS) </em>, 2017  <br>
-              <a href="https://arxiv.org/abs/1711.02282"> arXiv</a> / <a href="https://github.com/anirudh9119/walkback_nips17">code</a>      
-            </div>
-            <div id="vw" style="display:none">  
-            </div><br>
-             
-             <div onmouseover="document.getElementById('zoneout').style.display = 'block';"
-                onmouseout="document.getElementById('zoneout').style.display='none';">
-              <a href="https://arxiv.org/abs/1606.01305">
-              <papertitle> Zoneout: Regularizing RNNs by Randomly Preserving Hidden Activations  </papertitle></a><br>
-              <a href="https://mila.quebec/en/person/david-scott-krueger/"> David Krueger </a>,
-              <a href="http://www.teganmaharaj.com/"> Tegan Maharaj </a>,
-              <a href="http://scholar.google.com/citations?user=iW_lUIkAAAAJ&hl=en"> János Kramár </a>,
-              <a href="http://scholar.google.ca/citations?user=HT85tXsAAAAJ&hl=en"> Mohammad Pezeshki </a>,
-              <a href="http://scholar.google.ca/citations?user=euUV4iUAAAAJ&hl=en"> Nicolas Ballas </a>,
-              <a href="https://nke001.github.io/"> Nan Rosemary Ke </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a>,
-              <a href="https://mila.quebec/en/person/aaron-courville/"> Aaron Courville </a>,
-              <a href="https://sites.google.com/view/christopher-pal"> Chris Pal </a> <br>
-              <em> International Conference on Learning Representations (ICLR)</em>, 2017  <br>
-              <a href="https://arxiv.org/abs/1606.01305"> arXiv</a> / <a href="https://github.com/teganmaharaj/zoneout">code</a>      
-            </div>
-            <div id="zoneout" style="display:none">  
-            </div><br>
-             
-            <div onmouseover="document.getElementById('actor-critic').style.display = 'block';"
-                onmouseout="document.getElementById('actor-critic').style.display='none';">
-              <a href="https://arxiv.org/abs/1607.07086">
-              <papertitle> An Actor-Critic Algorithm for Sequence Prediction </papertitle></a><br>
-              <a href="https://rizar.github.io/"> Dzmitry Bahdanau </a>,
-              <a href="https://scholar.google.co.uk/citations?user=Q6UMpRYAAAAJ&hl=en&oi=ao"> Philemon Brakel </a>,
-              <a href="https://kelvinxu.github.io/"> Kelvin Xu </a>,
-              <i>Anirudh Goyal</i>,
-              <a href="https://www.cs.mcgill.ca/~rlowe1/"> Ryan Lowe </a>,
-              <a href="www.cs.mcgill.ca/~jpineau/"> Joelle Pineau </a>,
-              <a href="https://mila.quebec/en/person/aaron-courville/"> Aaron Courville </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> International Conference on Learning Representations (ICLR)</em>, 2017  <br>
-              <a href="https://arxiv.org/abs/1607.07086"> arXiv</a> / <a href="https://github.com/rizar/actor-critic-public">code</a>      
-            </div>
-            <div id="actor-critic" style="display:none">  
-            </div><br>
-
-     <heading2><i>2016 </i></heading2><br><br>
-
-            <div onmouseover="document.getElementById('pforcing').style.display = 'block';"
-                onmouseout="document.getElementById('pforcing').style.display='none';">
-              <a href="https://arxiv.org/abs/1610.09038">
-              <papertitle> Professor Forcing: A New Algorithm for Training Recurrent Networks </papertitle></a><br>
-              <i>Anirudh Goyal</i>,
-              <a href="https://scholar.google.co.uk/citations?user=BFzFy1YAAAAJ&hl=en&oi=ao"> Alex Lamb </a>,
-              <a href="http://scholar.google.com/citations?user=PgqC5SYAAAAJ&hl=en"> Ying Zhang </a>,
-              <a href="https://mila.quebec/en/person/saizheng-zhang/"> Saizheng Zhang </a>,
-              <a href="https://mila.quebec/en/person/aaron-courville/"> Aaron Courville </a>,
-              <a href="https://yoshuabengio.org/"> Yoshua Bengio </a> <br>
-              <em> Advances in Neural Information Processing Systems (NIPS) </em>, 2016  <br>
-              <a href="https://arxiv.org/abs/1610.09038"> arXiv</a> / <a href="https://github.com/anirudh9119/LM_GANS">code</a>      
-            </div>
-            <div id="pforcing" style="display:none">  
-            </div><br>
- -->
-
-      </tbody></table>
-
-    </td>
-    </tr>
-  </tbody></table>
-
-
-</body></html>
+      </div>
+
+      <section class="home-section" id="publications">
+        <h3>Selected Publications</h3>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2511.05963">Next-Latent Prediction Transformers Learn Compact World Models</a> — In Submission</li>
+          <li><a href="https://arxiv.org/pdf/2510.07312">h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning</a> — ICML 2026 (Spotlight)</li>
+          <li><a href="https://arxiv.org/pdf/2601.21718">When Does Predictive Inverse Dynamics Outperform Behavior Cloning?</a> — ICML 2026</li>
+          <li><a href="https://arxiv.org/pdf/2502.01316">Learning Fused State Representations for Control from Multi-View Observations</a> — ICML 2025</li>
+          <li><a href="https://arxiv.org/pdf/2405.20313">Sequence-Augmented SE(3)-Flow Matching for Conditional Protein Backbone Generation</a> — NeurIPS 2024</li>
+          <li><a href="https://arxiv.org/abs/2311.03534">PcLast: Discovering Plannable Continuous Latent States</a> — ICML 2024</li>
+          <li><a href="https://arxiv.org/abs/2211.00164">Agent-Controller Representations: Principled Offline RL with Rich Exogenous Information</a> — ICML 2023</li>
+          <li><a href="https://arxiv.org/abs/1901.10902">InfoBot: Transfer and Exploration via the Information Bottleneck</a> — ICLR 2019</li>
+          <li><a href="https://arxiv.org/pdf/1709.06560.pdf">Deep Reinforcement Learning that Matters</a> — AAAI 2018</li>
+        </ul>
+      </section>
+
+      <section class="home-section" id="experience">
+        <h3>Research Experience</h3>
+        <ul>
+          <li>(Feb'25 – Present) Senior Research Scientist, Microsoft Research</li>
+          <li>(Jul'24 – Feb'25) Senior Research Consultant, SDAIA</li>
+          <li>(Sep'23 – Jul'24) Research Scientist, DreamFold AI</li>
+          <li>(Jun'23 – Oct'23) Research Intern, Morgan Stanley, NYC</li>
+          <li>(Jan'22 – Apr'23) Student Researcher, Microsoft Research (Advisor: J. Langford, H. Seijen, R.T.D Combes)</li>
+          <li>(Jun'22 – Sep'22) Research Intern, Apple MLR (Advisor: Devon Hjelm, Samy Bengio)</li>
+          <li>(Jun'21 – Nov'21) Research Intern, Microsoft Research NYC (Advisor: John Langford)</li>
+        </ul>
+      </section>
+
+      <section class="home-section">
+        <h3>Academic Places</h3>
+        <ul>
+          <li>(2017 – 2022) PhD, McGill University (Supervisor: Doina Precup)</li>
+          <li>(2016 – 2017) MPhil, University of Cambridge (Supervisor: Zoubin Ghahramani)</li>
+          <li>(2011 – 2015) Undergraduate, University College London (Supervisor: John Shawe-Taylor)</li>
+        </ul>
+      </section>
+
+      <section class="home-section">
+        <h3>Research Interests</h3>
+        <ul>
+          <li>Deep Reinforcement Learning</li>
+          <li>Latent State Discovery, State Abstraction &amp; Representation Learning</li>
+          <li>Offline Reinforcement Learning</li>
+          <li>Probabilistic Models and Bayesian Deep Learning</li>
+          <li>Deep Generative Models, Approximate and Bayesian Inference</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-social">
+        <ul>
+          <li><a href="https://twitter.com/riashatislam" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://github.com/Riashat/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/riashatislam/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://scholar.google.ca/citations?user=2_4Rs44AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://dblp.org/search?q=Islam%2C%20Riashat/" target="_blank" rel="noopener noreferrer">DBLP</a></li>
+        </ul>
+      </div>
+      <p class="site-description"><a class="email-link" href="mailto:riashat.islam.93@gmail.com">riashat.islam.93 (at) gmail (dot) com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
