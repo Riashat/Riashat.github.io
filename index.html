@@ -66,10 +66,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    .top-social a {
-      font-size: 14px;
-      color: var(--muted);
-    }
+    .top-social a { font-size: 14px; color: var(--muted); }
     .top-social a:hover { color: var(--accent-hover); }
     .desktop-menu ul {
       list-style: none;
@@ -116,16 +113,37 @@
       color: var(--text);
     }
     .home-section ul { list-style: none; padding: 0; margin: 0; }
-    .home-section li { margin-bottom: 14px; padding-left: 16px; position: relative; }
+    .home-section li {
+      margin-bottom: 20px;
+      padding-left: 16px;
+      position: relative;
+    }
     .home-section li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
-    .entry-meta { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
-    .entry-role { font-weight: 600; }
+    .entry-org {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .entry-dates {
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .entry-role {
+      display: block;
+      font-size: 14px;
+      color: var(--text);
+      margin-top: 3px;
+    }
     .entry-collab {
       display: block;
       font-size: 13px;
       color: var(--muted);
       font-style: italic;
-      margin-top: 2px;
+      margin-top: 3px;
     }
     .pub-note { font-size: 14px; color: var(--muted); margin-top: 12px; }
     .site-footer {
@@ -186,8 +204,9 @@
           <em>Latent State Discovery for Robust, Reusable and Reliable Deep RL</em>.
         </p>
         <p class="research-interests">
-          <strong>Research Interests:</strong> I build reasoning models and systems for math, coding and vision tasks, with a focus on long horizon agentic AI, world dynamics models, latent representation learning, goal-directed planning and exploration capabilities. 
-          My recent work focuses on Language Model pre-training, thinking in the latent space with faster rollout capabilities; self-verification and reasoning for RL post-training and improving long horizon reasoning, specifically for vision capabilities of Vision-Language Models. I care about reliable and reproducible AI. 
+          <strong>Research Interests:</strong> Agentic AI and World Models; Latent State Discovery for Planning and
+          Exploration; Disentangled Representation Learning; General Value Functions (GVFs); Generative Models;
+          Multi-Modal Learning.
         </p>
       </div>
 
@@ -195,38 +214,38 @@
         <h3>Industry Research Experience</h3>
         <ul>
           <li>
+            <span class="entry-org">Microsoft AI (MAI), New York <span class="entry-dates">— Aug 2026 – Present</span></span>
             <span class="entry-role">Member of Technical Staff — RL Post-Training | Final Climb Vision-Language Models</span>
-            <span class="entry-meta">Microsoft AI (MAI), New York — Aug 2026 – Present</span>
             <span class="entry-collab">Collaborators: Ali Farhadi, John Langford, Ranjay Krishna</span>
           </li>
           <li>
+            <span class="entry-org">Microsoft Research AI Frontiers, New York <span class="entry-dates">— Jan 2025 – Present</span></span>
             <span class="entry-role">Senior Research Scientist — RL Post-Training | Pre-Training | World Models</span>
-            <span class="entry-meta">Microsoft Research AI Frontiers, New York — Jan 2025 – Present</span>
             <span class="entry-collab">Collaborators: John Langford, Alex Lamb, Kwangjun Ahn, Tim Pearce, Manan Tomar</span>
           </li>
           <li>
+            <span class="entry-org">HUMAIN, Riyadh <span class="entry-dates">— Jul 2024 – Jan 2025</span></span>
             <span class="entry-role">Senior Research Scientist — Post-Training and Safety Alignment</span>
-            <span class="entry-meta">SDAIA, HUMAIN, Riyadh — Jul 2024 – Jan 2025</span>
             <span class="entry-collab">Collaborators: M Saiful Bari, Sheikh Jubair, Ehsan Hoque, Pedro Moreno</span>
           </li>
           <li>
+            <span class="entry-org">DreamFold AI, Montreal <span class="entry-dates">— Jun 2023 – Jul 2024</span></span>
             <span class="entry-role">Research Scientist — RL &amp; Flow Matching for Protein Structure Design</span>
-            <span class="entry-meta">DreamFold AI, Montreal — Jun 2023 – Jul 2024</span>
             <span class="entry-collab">Collaborators: Alex Tong, Joey Bose, Jarrid Rector-Brooks</span>
           </li>
           <li>
+            <span class="entry-org">Microsoft Research, Montreal <span class="entry-dates">— Apr 2022 – Apr 2023</span></span>
             <span class="entry-role">Student Researcher — Factorized Latent Representations in RL</span>
-            <span class="entry-meta">Microsoft Research, Montreal — Apr 2022 – Apr 2023</span>
             <span class="entry-collab">Collaborators: R. Tachet des Combes, R. Laroche, H. van Seijen, A. Lamb, J. Langford, D. Misra, A. Krishnamurthy</span>
           </li>
           <li>
+            <span class="entry-org">Apple MLR, California <span class="entry-dates">— Jan 2022 – Apr 2022</span></span>
             <span class="entry-role">Research Scientist Intern — Representation Learning for World Models in RL</span>
-            <span class="entry-meta">Apple MLR, California — Jan 2022 – Apr 2022</span>
             <span class="entry-collab">Collaborators: Devon Hjelm, Samy Bengio</span>
           </li>
           <li>
+            <span class="entry-org">Microsoft Research, New York City <span class="entry-dates">— Apr 2021 – Dec 2021</span></span>
             <span class="entry-role">Research Scientist Intern — Provable RL for Latent State Discovery</span>
-            <span class="entry-meta">Microsoft Research, New York City — Apr 2021 – Dec 2021</span>
             <span class="entry-collab">Collaborators: Alex Lamb, John Langford, Akshay Krishnamurthy, Dylan Foster, Yonathan Efroni, Dipendra Misra</span>
           </li>
         </ul>
@@ -234,28 +253,28 @@
         <h4>Academic Research Experience</h4>
         <ul>
           <li>
+            <span class="entry-org">Microsoft Research, Montreal <span class="entry-dates">— Jun 2017 – May 2019</span></span>
             <span class="entry-role">Student Researcher Intern — Reproducibility in Deep RL, Active Imitation Learning</span>
-            <span class="entry-meta">Microsoft Research, Montreal — Jun 2017 – May 2019</span>
             <span class="entry-collab">Collaborators: Phillip Bachman, Alessandro Sordoni, John Langford</span>
           </li>
           <li>
+            <span class="entry-org">Caltech (SURF) <span class="entry-dates">— Jun – Aug 2015</span></span>
             <span class="entry-role">Improved State Estimation for a Resilient Spacecraft Executive (with NASA JPL)</span>
-            <span class="entry-meta">Caltech (SURF) — Jun – Aug 2015</span>
             <span class="entry-collab">Supervisors: R. Murray, C. McGhan</span>
           </li>
           <li>
+            <span class="entry-org">University of Cambridge <span class="entry-dates">— Mar – Sep 2016</span></span>
             <span class="entry-role">Active Learning for Images using Bayesian Deep Learning Uncertainty</span>
-            <span class="entry-meta">University of Cambridge — Mar – Sep 2016</span>
             <span class="entry-collab">Supervisors: Z. Ghahramani, Y. Gal</span>
           </li>
           <li>
+            <span class="entry-org">UCL <span class="entry-dates">— Sep 2015 – Mar 2016</span></span>
             <span class="entry-role">Improving Convergence of Deterministic Policy Gradient Algorithms in RL</span>
-            <span class="entry-meta">UCL — Sep 2015 – Mar 2016</span>
             <span class="entry-collab">Supervisors: J. Shawe-Taylor, G. Lever; and D. Silver</span>
           </li>
           <li>
+            <span class="entry-org">Johns Hopkins University (SRE) <span class="entry-dates">— Jun – Aug 2014</span></span>
             <span class="entry-role">Cost-Sensitive Decision Tree of Classifiers for Medical Data</span>
-            <span class="entry-meta">Johns Hopkins University (SRE) — Jun – Aug 2014</span>
             <span class="entry-collab">Supervisor: Suchi Saria</span>
           </li>
         </ul>
@@ -265,18 +284,18 @@
         <h3>Education</h3>
         <ul>
           <li>
+            <span class="entry-org">McGill University &amp; Mila – Quebec AI Institute, Montreal <span class="entry-dates">— Sep 2017 – Sep 2022</span></span>
             <span class="entry-role">PhD in Machine Learning</span>
-            <span class="entry-meta">McGill University &amp; Mila – Quebec AI Institute, Montreal — Sep 2017 – Sep 2022</span>
             <span class="entry-collab">Supervisors: Doina Precup, Joelle Pineau; Co-Advisors: Yoshua Bengio, John Langford. Thesis: Latent State Discovery for Robust, Reusable and Reliable Deep RL.</span>
           </li>
           <li>
+            <span class="entry-org">University of Cambridge, St John's College <span class="entry-dates">— Sep 2015 – Aug 2016</span></span>
             <span class="entry-role">MPhil, Machine Learning, Speech &amp; Language Technology</span>
-            <span class="entry-meta">University of Cambridge, St John's College — Sep 2015 – Aug 2016</span>
             <span class="entry-collab">Supervisors: Zoubin Ghahramani, Yarin Gal. Thesis: Active Learning with Image Data using Bayesian Uncertainty in Deep Learning.</span>
           </li>
           <li>
+            <span class="entry-org">University College London <span class="entry-dates">— Sep 2011 – Jul 2015</span></span>
             <span class="entry-role">BEng, Electronic &amp; Electrical Engineering (ML Major)</span>
-            <span class="entry-meta">University College London — Sep 2011 – Jul 2015</span>
             <span class="entry-collab">Supervisors: John Shawe-Taylor, Guy Lever; Co-Advisor: David Silver. Thesis: Analysing Convergence of Deep Policy Optimization in RL; Deterministic Policy Gradient Methods.</span>
           </li>
         </ul>
